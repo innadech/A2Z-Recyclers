@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2Z-Recyclers</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="app-bar row">
+        <div class="app-bar-menu">
+          <a href="#toolbar">
+            <span class="mdi mdi-menu"></span>
+          </a>
+          <div class="toolbar">
+            <div class="toolbar-bar row">
+              <div class="app-bar-menu">
+                <a href="#toolbar">
+                  <span class="mdi mdi-menu"></span>
+                </a>
+              </div>
+              <div class="app-bar-title">
+                <a href=".">
+                  <img src="./img/logo.png" height="80" alt="" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./mission.html">Our mission</a></li>
+                <li><a href="./about.html">About us</a></li>
+                <li><a href="./news.html">News</a></li>
+                <li><a href="./contact.html">Contacts</a></li>
+                <li><a href="./login.html">Login</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="app-bar-title">
+          <a href=".">
+            <img src="./img/logo.png" height="80" alt="" />
+          </a>
+        </div>
+
+        <div class="app-bar-search">
+          <form action="">
+            <input type="search" />
+            <button type="submit"><span class="mdi mdi-magnify"></span></button>
+          </form>
+        </div>
+      </header>
+
+      <nav class="app-tabs row">
+        <a href="./household.html">Household Guide</a>
+        <a href="./business.html">Business Solutions</a>
+      </nav>
+
+      <main>
+        <section class="hero-banner">
+          <div class="hero-content">
+            <h1>A2Z Recyclers</h1>
+            <p>Shaping Eco-Friendly Habits for a Cleaner Tomorrow</p>
+          </div>
+        </section>
+      </main>
+
+      <aside>
+        <div class="clock-widget" aria-label="Current time clock">
+          <div class="clock-time" id="live-clock">00:00</div>
+        </div>
+      </aside>
+
+      <footer class="copyrights">
+        <ul>
+          <li><a href="./mission.html">Privacy</a></li>
+          <li><a href="./about.html">Helpdesk</a></li>
+        </ul>
+        <span>© A2Z-Recyclers</span>
+      </footer>
+    </div>
+    <script src="./js/script.js"></script>
+    <script>
+      function startClock() {
+        const clockElement = document.getElementById('live-clock')
+        function updateTime() {
+          const now = new Date()
+          const hours = String(now.getHours()).padStart(2, '0')
+          const minutes = String(now.getMinutes()).padStart(2, '0')
+          clockElement.textContent = `${hours}:${minutes}`
+        }
+        setInterval(updateTime, 1000)
+        updateTime()
+      }
+      document.addEventListener('DOMContentLoaded', startClock)
+    </script>
+  </body>
+</html>

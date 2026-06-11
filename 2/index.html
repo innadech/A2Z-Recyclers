@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>A2Z Recyclers - Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img
+          src="https://via.placeholder.com/150x80?text=GELOS+LOGO"
+          alt="A2Z Recyclers Logo"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="household.html">Household Guide</a></li>
+          <li><a href="business.html">Business Solutions</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero-banner">
+      <h1>Welcome to A2Z Recyclers</h1>
+    </section>
+
+    <main>
+      <section class="content">
+        <h2>Our Green Vision</h2>
+        <p>
+          A2Z Recyclers is committed to reducing pollution and greenhouse gas
+          emissions through community-driven recycling habits[cite: 2].
+        </p>
+        <br />
+        <h3>Successful Projects</h3>
+        <ul>
+          <li><strong>Ecogenie:</strong> Innovative waste tracking.</li>
+          <li>
+            <strong>Good Food:</strong> Organic waste management[cite: 1].
+          </li>
+        </ul>
+      </section>
+
+      <aside class="sidebar">
+        <div class="clock-widget" id="clock">12:00</div>
+        <div
+          class="info-box"
+          style="background: rgba(1, 86, 163, 0.1); padding: 1rem"
+        >
+          <h4>Next Workshop</h4>
+          <p>Location: Pennant Hills</p>
+          <p>Register on the Contact page!</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="helpdesk.html">Helpdesk & Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script>
+      function updateClock() {
+        const now = new Date()
+        document.getElementById('clock').innerText =
+          now.getHours() + ':' + String(now.getMinutes()).padStart(2, '0')
+      }
+      setInterval(updateClock, 1000)
+      updateClock()
+    </script>
+  </body>
+</html>

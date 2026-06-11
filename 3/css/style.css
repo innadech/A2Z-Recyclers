@@ -1,0 +1,337 @@
+@import url(https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap);
+@import url(https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css);
+
+:root {
+  --clr-red: #7b2e0f;
+  --clr-yellow: #ffa200;
+  --clr-blue: #0156a3;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #1a1b1c;
+  margin: 0;
+}
+textarea {
+  resize: none;
+}
+button {
+  padding: 15px 50px;
+}
+a,
+html,
+input,
+button,
+select,
+textarea {
+  color: #eaebec;
+  font-size: 18px;
+  font-family: 'TikTok Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    'slnt' 0,
+    'wdth' 100;
+}
+button,
+select,
+input,
+textarea {
+  padding: 5px 10px;
+  border: 1px solid #2a2b2c;
+  background: #2a2b2c;
+  outline: 0;
+  font-weight: 500;
+  background: #414243;
+}
+button:hover,
+select:hover,
+input:hover,
+textarea:hover {
+  box-shadow: 0 0 15px 0 #212223;
+  background: #414243;
+}
+button:focus,
+select:focus,
+input:focus,
+textarea:focus {
+  /* box-shadow: 0 0 10px 0 #212223; */
+  /* border: 1px solid #1a1b1c; */
+  /* background: #414243; */
+  border: 1px solid #1a1b1c;
+}
+button:active,
+select:active,
+input:active,
+textarea:active {
+  /* box-shadow: 0 0 15px 0 #101112; */
+}
+.row {
+  font-size: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.row > * {
+  display: inline-block;
+  font-size: 18px;
+  white-space: normal;
+  overflow: hidden;
+  vertical-align: top;
+  height: 100%;
+}
+
+.wrapper {
+  max-width: 576px;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+.app-bar {
+  padding: 0 5px;
+  height: 96px;
+  line-height: 96px;
+  background: #2a2b2c;
+  position: relative;
+}
+.app-bar > div {
+  padding: 0 10px;
+}
+.app-bar-title {
+  width: 118px;
+  font-size: 22px;
+  font-weight: 800;
+}
+.app-bar-title > a {
+  display: inline-block;
+  height: 100%;
+}
+.app-bar-title > a > img {
+  height: 80px;
+  margin: 5px;
+}
+.app-bar-menu {
+  width: 52px;
+}
+.app-bar-menu > a > span {
+  font-size: 32px;
+}
+.app-bar-search {
+  width: calc(100% - 52px - 118px);
+  text-align: center;
+  font-size: 0;
+  form {
+    display: inline-block;
+  }
+  [type='search'] {
+    background: #3a3b3c;
+  }
+}
+
+.app-tabs {
+  white-space: normal;
+  position: sticky;
+  top: 0;
+  /* background-color: azure; */
+  a {
+    /* border: 1px solid #000; */
+    /* color: #101112; */
+    font-weight: 600;
+    /* padding: 0 25px; */
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    width: calc(100% / 1);
+    /* transition: all 3s ease; */
+    background: #3a3b3c;
+  }
+  a:hover {
+    background: #414243;
+  }
+}
+
+.toolbar {
+  padding: 0 5px;
+  background: #2a2b2c;
+  background: #1a1b1c;
+  background: #212223;
+  position: fixed;
+  width: 280px;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  left: -300px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px 0 #101112;
+}
+.app-bar-menu > a:focus + .toolbar {
+  left: 0;
+}
+.toolbar-bar {
+  height: 96px;
+}
+.toolbar-bar > div {
+  padding: 0 10px;
+}
+.toolbar ul {
+  padding-top: 15px;
+  line-height: 36px;
+  list-style: none;
+}
+footer ul {
+  margin-bottom: 35px;
+  padding: 0 15px;
+  line-height: 36px;
+  list-style: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2a2b2c;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Оптимальная высота для десктопа */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+  /* Живой градиентный фон из трех цветов ТЗ */
+  background: linear-gradient(
+    -45deg,
+    var(--clr-red),
+    var(--clr-blue),
+    var(--clr-yellow),
+    var(--clr-red)
+  );
+  background-size: 400% 400%;
+
+  /* Анимация движения фона */
+  animation: gradientShift 12s ease infinite;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  z-index: 2;
+}
+
+.hero-banner h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+
+  /* Анимация плавного появления и сдвига текста */
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+.hero-banner p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: #f4f4f4;
+  font-weight: 300;
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+
+  /* Анимация появления подзаголовка с задержкой */
+  animation: fadeInUp 1.5s ease-out 0.5s forwards;
+  opacity: 0; /* Изначально скрыт, пока не сработает задержка */
+}
+
+/* --- ЭФФЕКТЫ АНИМАЦИИ (CSS @keyframes) --- */
+
+/* 1. Плавное переливание фонового градиента */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 2. Выплывание текста снизу вверх с проявлением */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность под мобильные устройства (Медиа-запросы из ТЗ) */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 250px; /* Уменьшаем высоту на мобилках */
+  }
+  .hero-banner h1 {
+    font-size: 2.2rem;
+  }
+  .hero-banner p {
+    font-size: 1.1rem;
+  }
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+.clock-widget {
+  /* Жесткое требование из ТЗ: размер 112 на 112 пикселей */
+  width: 112px;
+  height: 112px;
+
+  /* Фирменные цвета и форма */
+  background-color: var(--clr-yellow);
+  border: 3px solid var(--clr-red);
+  border-radius: 50%; /* Делаем виджет круглым */
+
+  /* Центрирование текста внутри круга */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Эффект тени для соответствия современному UI */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+  /* Чтобы виджет не сжимался в flex-контейнерах */
+  flex-shrink: 0;
+}
+
+.clock-time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-red);
+  letter-spacing: 1px;
+}
