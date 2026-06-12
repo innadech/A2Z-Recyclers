@@ -2,16 +2,24 @@
 @import url(https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css);
 
 :root {
+  --clr-11: #1a1b1c;
+  --clr-22: #212223;
+  --clr-33: #2a2b2c;
+  --clr-44: #3a3b3c;
+  --clr-55: #414243;
+
+  --clr-99: #eaebec;
+
   --clr-red: #7b2e0f;
-  --clr-yellow: #ffa200;
   --clr-blue: #0156a3;
+  --clr-yellow: #ffa200;
 }
 
 * {
   box-sizing: border-box;
 }
 body {
-  background: #1a1b1c;
+  background: var(--clr-11);
   margin: 0;
 }
 textarea {
@@ -26,7 +34,7 @@ input,
 button,
 select,
 textarea {
-  color: #eaebec;
+  color: var(--clr-99);
   font-size: 18px;
   font-family: 'TikTok Sans', sans-serif;
   font-optical-sizing: auto;
@@ -41,34 +49,25 @@ select,
 input,
 textarea {
   padding: 5px 10px;
-  border: 1px solid #2a2b2c;
-  background: #2a2b2c;
+  border: 1px solid var(--clr-33);
+  background: var(--clr-33);
   outline: 0;
   font-weight: 500;
-  background: #414243;
+  background: var(--clr-55);
 }
 button:hover,
 select:hover,
 input:hover,
 textarea:hover {
-  box-shadow: 0 0 15px 0 #212223;
-  background: #414243;
+  box-shadow: 0 0 15px 0 var(--clr-22);
 }
 button:focus,
 select:focus,
 input:focus,
 textarea:focus {
-  /* box-shadow: 0 0 10px 0 #212223; */
-  /* border: 1px solid #1a1b1c; */
-  /* background: #414243; */
-  border: 1px solid #1a1b1c;
+  border: 1px solid var(--clr-11);
 }
-button:active,
-select:active,
-input:active,
-textarea:active {
-  /* box-shadow: 0 0 15px 0 #101112; */
-}
+
 .row {
   font-size: 0;
   white-space: nowrap;
@@ -94,7 +93,7 @@ textarea:active {
   padding: 0 5px;
   height: 96px;
   line-height: 96px;
-  background: #2a2b2c;
+  background: var(--clr-33);
   position: relative;
 }
 .app-bar > div {
@@ -127,7 +126,7 @@ textarea:active {
     display: inline-block;
   }
   [type='search'] {
-    background: #3a3b3c;
+    background: var(--clr-44);
   }
 }
 
@@ -137,27 +136,22 @@ textarea:active {
   top: 0;
   /* background-color: azure; */
   a {
-    /* border: 1px solid #000; */
-    /* color: #101112; */
     font-weight: 600;
-    /* padding: 0 25px; */
     text-align: center;
     line-height: 40px;
     text-decoration: none;
     width: calc(100% / 1);
-    /* transition: all 3s ease; */
-    background: #3a3b3c;
+    transition: all 200ms ease;
+    background: var(--clr-44);
   }
   a:hover {
-    background: #414243;
+    background: var(--clr-55);
   }
 }
 
 .toolbar {
   padding: 0 5px;
-  background: #2a2b2c;
-  background: #1a1b1c;
-  background: #212223;
+  background: var(--clr-22);
   position: fixed;
   width: 280px;
   top: 0;
@@ -165,7 +159,7 @@ textarea:active {
   z-index: 1;
   left: -300px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 15px 0 #101112;
+  box-shadow: 0 0 15px 0 var(--clr-11);
 }
 .app-bar-menu > a:focus + .toolbar {
   left: 0;
@@ -195,7 +189,11 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #2a2b2c;
+  background: var(--clr-33);
+}
+footer > div {
+  display: flex;
+  justify-content: space-around;
 }
 
 /*  */

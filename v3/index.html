@@ -72,27 +72,19 @@
       </aside>
 
       <footer class="copyrights">
-        <ul>
-          <li><a href="./mission.html">Privacy</a></li>
-          <li><a href="./about.html">Helpdesk</a></li>
-        </ul>
-        <span>© A2Z-Recyclers</span>
+        <div>
+          <ul>
+            <li>8-800-555-35-35</li>
+            <li>support@a2z-recyclers.org.au</li>
+          </ul>
+          <ul>
+            <li><a href="./mission.html">Privacy</a></li>
+            <li><a href="./about.html">Helpdesk</a></li>
+          </ul>
+        </div>
+        <span>©2026 A2Z-Recyclers</span>
       </footer>
     </div>
     <script src="./js/script.js"></script>
-    <script>
-      function startClock() {
-        const clockElement = document.getElementById('live-clock')
-        function updateTime() {
-          const now = new Date()
-          const hours = String(now.getHours()).padStart(2, '0')
-          const minutes = String(now.getMinutes()).padStart(2, '0')
-          clockElement.textContent = `${hours}:${minutes}`
-        }
-        setInterval(updateTime, 1000)
-        updateTime()
-      }
-      document.addEventListener('DOMContentLoaded', startClock)
-    </script>
   </body>
 </html>
