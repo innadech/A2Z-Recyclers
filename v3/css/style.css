@@ -313,6 +313,7 @@ footer > div {
 /*  */
 
 .clock-widget {
+  margin: 0 auto;
   /* Жесткое требование из ТЗ: размер 112 на 112 пикселей */
   width: 112px;
   height: 112px;
@@ -674,3 +675,189 @@ footer > div {
     font-size: 1.6rem;
   }
 }
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+/* Секция мероприятий */
+.events-section {
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.25; /* Требование ТЗ */
+}
+
+/* Заголовок секции */
+.events-main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--clr-red);
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+/* Карточка события (Флексбокс-строка на десктопе) */
+.event-card {
+  background-color: #ffffff;
+  /* border: 1px solid #e0e0e0; */
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Календарная плашка (Использует фирменный ржавый цвет) */
+.event-date-badge {
+  background-color: var(--clr-red);
+  color: #ffffff;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.event-month {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.event-day {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Информация о событии */
+.event-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Маленький тег типа события */
+.event-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--clr-blue);
+  text-transform: uppercase;
+}
+
+/* Название воркшопа */
+.event-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--clr-22);
+  margin: 0;
+}
+
+/* Время и локация */
+.event-details {
+  font-size: 0.9rem;
+  color: var(--clr-66);
+  margin: 0;
+}
+
+/* Описание */
+.event-description {
+  font-size: 0.95rem;
+  color: var(--clr-55);
+  margin: 0;
+}
+
+/* Контейнер кнопки */
+.event-action {
+  flex-shrink: 0;
+}
+
+/* Кнопка регистрации (Использует фирменный синий цвет) */
+.event-reg-btn {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--clr-blue);
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.event-reg-btn:hover {
+  background-color: var(--clr-yellow);
+  color: var(--clr-33); /* На золотом фоне лучше читается темный текст */
+}
+
+/* Адаптивность для мобильных устройств (брейкпоинт 768px) */
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column; /* Перестраиваем строку в колонку */
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .event-date-badge {
+    flex-direction: row; /* На мобилке дату можно сделать компактнее в строчку */
+    width: auto;
+    height: auto;
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .event-day {
+    font-size: 1.1rem;
+  }
+
+  .event-action {
+    width: 100%;
+  }
+
+  .event-reg-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .events-main-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* .wrapper-content {
+  display: flex;
+}
+
+.wrapper-content > main {
+  flex: 3;
+}
+.wrapper-content > aside {
+  flex: 1;
+} */
