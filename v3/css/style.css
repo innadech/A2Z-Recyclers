@@ -7,6 +7,7 @@
   --clr-33: #2a2b2c;
   --clr-44: #3a3b3c;
   --clr-55: #414243;
+  --clr-66: #777777;
 
   --clr-99: #eaebec;
   --clr-88: #ffffff;
@@ -134,6 +135,7 @@ textarea:focus {
 .app-tabs {
   white-space: normal;
   position: sticky;
+  z-index: 2;
   top: 0;
   /* background-color: azure; */
   a {
@@ -157,7 +159,7 @@ textarea:focus {
   width: 280px;
   top: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 3;
   left: -300px;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px 0 var(--clr-11);
@@ -209,7 +211,7 @@ footer > div {
 /*  */
 
 .hero-banner {
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 350px; /* Оптимальная высота для десктопа */
   display: flex;
@@ -235,7 +237,7 @@ footer > div {
 .hero-content {
   max-width: 800px;
   padding: 0 20px;
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .hero-banner h1 {
@@ -363,7 +365,7 @@ footer > div {
   flex: 1;
   min-width: 250px;
   max-width: 350px;
-  position: relative;
+  /* position: relative; */
 }
 
 .mission-image-side img {
@@ -552,6 +554,123 @@ footer > div {
   }
 
   .projects-main-title {
+    font-size: 1.6rem;
+  }
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+
+/* Секция отзывов целиком */
+.testimonials-section {
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.25; /* Требование ТЗ по интервалу */
+}
+
+/* Заголовок секции */
+.testimonials-main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--clr-blue);
+  margin-bottom: 25px;
+  /* border-bottom: 2px solid #e0e0e0; */
+  padding-bottom: 10px;
+}
+
+/* Сетка для десктопа — две колонки */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+/* Карточка отзыва */
+.testimonial-card {
+  background-color: #ffffff;
+  /* border: 1px solid #e0e0e0; */
+  border-top: 4px solid var(--clr-yellow); /* Золотой акцент сверху */
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Декоративная кавычка */
+.testimonial-quote-icon {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 4rem;
+  color: rgba(255, 162, 0, 0.2); /* Очень прозрачный золотой */
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  line-height: 1;
+}
+
+/* Текст самого отзыва */
+.testimonial-text {
+  font-size: 1rem;
+  color: var(--clr-55);
+  font-style: italic;
+  margin-bottom: 20px;
+  /* z-index: 1; */
+  /* Чтобы текст был поверх декоративной кавычки */
+}
+
+/* Блок автора отзыва (фото + инфо) */
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Круглая фотография пользователя */
+.testimonial-user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 2px solid var(--clr-blue); */
+}
+
+/* Текстовые данные автора */
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-22);
+  margin: 0;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  color: var(--clr-66);
+}
+
+/* Адаптивность для мобильных устройств (брейкпоинт 768px из ТЗ) */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Перестраиваем в одну колонку */
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonials-main-title {
     font-size: 1.6rem;
   }
 }
