@@ -242,7 +242,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--clr-88);
+  color: var(--clr-99);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -348,7 +348,7 @@ footer > div {
 
 .mission-container {
   display: flex;
-  background-color: var(--clr-88);
+  background-color: var(--clr-99);
   /* border: 1px solid #e0e0e0; */
   border-left: 8px solid var(--clr-red); /* Перенесли акцентную линию в рамку контейнера */
   border-radius: 8px;
@@ -404,7 +404,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--clr-88);
+  color: var(--clr-99);
   background-color: var(--clr-blue);
   padding: 12px 24px;
   border-radius: 4px;
