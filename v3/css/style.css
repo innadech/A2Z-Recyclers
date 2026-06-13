@@ -24,6 +24,9 @@ body {
   background: var(--clr-11);
   margin: 0;
 }
+h2 {
+  text-indent: 7px;
+}
 textarea {
   resize: none;
 }
@@ -85,10 +88,9 @@ textarea:focus {
 }
 
 .wrapper {
-  max-width: 576px;
+  /* max-width: 576px; */
   min-height: 100vh;
   margin: 0 auto;
-  position: relative;
 }
 
 .app-bar {
@@ -117,8 +119,20 @@ textarea:focus {
 .app-bar-menu {
   width: 52px;
 }
-.app-bar-menu > a > span {
+.app-bar-menu > button > span {
   font-size: 32px;
+}
+.app-bar-menu > button:focus + .toolbar {
+  left: 0;
+}
+.app-bar-menu > button,
+.app-bar-menu > button:hover,
+.app-bar-menu > button:focus {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
 }
 .app-bar-search {
   width: calc(100% - 52px - 118px);
@@ -144,11 +158,17 @@ textarea:focus {
     line-height: 40px;
     text-decoration: none;
     width: calc(100% / 1);
-    transition: all 200ms ease;
+    /* transition: all 200ms ease; */
     background: var(--clr-44);
   }
   a:hover {
     background: var(--clr-55);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-tabs a {
+    width: calc(100% / 2);
   }
 }
 
@@ -164,9 +184,10 @@ textarea:focus {
   transition: all 0.3s ease;
   box-shadow: 0 0 15px 0 var(--clr-11);
 }
-.app-bar-menu > a:focus + .toolbar {
+.toolbar:focus-within {
   left: 0;
 }
+
 .toolbar-bar {
   height: 96px;
 }
@@ -179,10 +200,6 @@ textarea:focus {
   list-style: none;
 }
 
-.dummy {
-  height: 300px;
-}
-
 footer ul {
   margin-bottom: 35px;
   padding: 0 15px;
@@ -193,14 +210,15 @@ footer ul {
 footer {
   text-align: center;
   padding: 25px;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   background: var(--clr-33);
 }
 footer > div {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -235,7 +253,7 @@ footer > div {
 }
 
 .hero-content {
-  max-width: 800px;
+  /* max-width: 800px; */
   padding: 0 20px;
   /* z-index: 2; */
 }
@@ -294,7 +312,7 @@ footer > div {
 }
 
 /* Адаптивность под мобильные устройства (Медиа-запросы из ТЗ) */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero-banner {
     height: 250px; /* Уменьшаем высоту на мобилках */
   }
@@ -353,7 +371,7 @@ footer > div {
   display: flex;
   background-color: var(--clr-99);
   /* border: 1px solid #e0e0e0; */
-  border-left: 8px solid var(--clr-red); /* Перенесли акцентную линию в рамку контейнера */
+  border-left: 8px solid var(--clr-blue); /* Перенесли акцентную линию в рамку контейнера */
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
@@ -420,7 +438,7 @@ footer > div {
 }
 
 /* Адаптивность для мобильных (брейкпоинт 768px из ТЗ) */
-@media (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .mission-container {
     flex-direction: column; /* Схлопывается в одну колонку */
   }
@@ -459,7 +477,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--rust);
+  color: var(--clr-yellow);
   margin-bottom: 25px;
   /* border-bottom: 2px solid #e0e0e0; */
   padding-bottom: 10px;
@@ -544,7 +562,7 @@ footer > div {
 }
 
 /* Адаптивность для мобильных устройств (брейкпоинт 768px из ТЗ) */
-@media (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .projects-grid {
     grid-template-columns: 1fr; /* Перестраиваем сетку в одну колонку */
     gap: 20px;
@@ -661,7 +679,7 @@ footer > div {
 }
 
 /* Адаптивность для мобильных устройств (брейкпоинт 768px из ТЗ) */
-@media (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .testimonials-grid {
     grid-template-columns: 1fr; /* Перестраиваем в одну колонку */
     gap: 20px;
@@ -815,44 +833,38 @@ footer > div {
 }
 
 /* Адаптивность для мобильных устройств (брейкпоинт 768px) */
-@media (max-width: 768px) {
-  .event-card {
-    flex-direction: column; /* Перестраиваем строку в колонку */
-    align-items: flex-start;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .event-date-badge {
-    flex-direction: row; /* На мобилке дату можно сделать компактнее в строчку */
-    width: auto;
-    height: auto;
-    padding: 6px 12px;
-    gap: 6px;
-  }
-
-  .event-day {
-    font-size: 1.1rem;
-  }
-
-  .event-action {
-    width: 100%;
-  }
-
-  .event-reg-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .events-main-title {
-    font-size: 1.6rem;
-  }
+.event-card {
+  flex-direction: column; /* Перестраиваем строку в колонку */
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
 }
 
-/* .wrapper-content {
-  display: flex;
+.event-date-badge {
+  flex-direction: row; /* На мобилке дату можно сделать компактнее в строчку */
+  width: auto;
+  height: auto;
+  padding: 6px 12px;
+  gap: 6px;
+}
+
+.event-day {
+  font-size: 1.1rem;
+}
+
+.event-action {
+  width: 100%;
+}
+
+.event-reg-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.events-main-title {
+  font-size: 1.6rem;
 }
 
 .wrapper-content > main {
@@ -860,4 +872,50 @@ footer > div {
 }
 .wrapper-content > aside {
   flex: 1;
-} */
+}
+
+.app-bar-links {
+  display: none;
+  text-align: center;
+}
+
+/* 576px, 768px и 992px */
+
+@media screen and (min-width: 576px) {
+  .wrapper-content {
+    display: flex;
+  }
+  main,
+  aside {
+    padding: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  footer > div {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .app-bar {
+    /* height: 120px; */
+  }
+  .app-bar-search {
+    width: calc(100% - 118px - 550px);
+  }
+
+  .app-bar-links {
+    display: inline-block;
+    width: 550px;
+    ul {
+      padding: 0;
+    }
+    li {
+      padding: 0 15px;
+    }
+  }
+  .app-bar-menu {
+    display: none;
+  }
+}

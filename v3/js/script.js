@@ -10,3 +10,7 @@ function startClock() {
   updateTime()
 }
 document.addEventListener('DOMContentLoaded', startClock)
+
+// document.querySelectorAll('a').forEach(el => {
+//   el.onclick = e => e.stopPropagation()
+// })
