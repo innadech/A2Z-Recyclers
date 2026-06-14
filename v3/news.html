@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2Z Recyclers - News Feed</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* ==========================================================================
+         ADDED. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ НОВОСТЕЙ (NEWS FEED)
+         ========================================================================== */
+      .news-main-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--retro-blue);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--bg-element);
+      }
+
+      .news-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .news-card {
+        background-color: var(--bg-light);
+        border-radius: 8px;
+        border-top: 4px solid var(--retro-blue);
+        padding: 25px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: transform 0.2s ease;
+      }
+
+      .news-card:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Изменение цвета бордера для важных объявлений */
+      .news-card.alert-news {
+        border-top-color: var(--rust);
+      }
+
+      .news-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+      }
+
+      .news-date {
+        color: var(--text-dark);
+        font-weight: 600;
+        opacity: 0.8;
+      }
+
+      .news-category {
+        background-color: var(--bg-element);
+        color: var(--text-dark);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+      }
+
+      .news-card.alert-news .news-category {
+        background-color: var(--rust);
+        color: var(--bg-pure);
+      }
+
+      .news-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 0;
+      }
+
+      .news-title a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .news-title a:hover {
+        color: var(--retro-blue);
+      }
+
+      .news-excerpt {
+        font-size: 1rem;
+        color: var(--text-dark);
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      .news-readmore {
+        align-self: flex-start;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--retro-blue);
+        text-decoration: none;
+        margin-top: 5px;
+      }
+
+      .news-readmore:hover {
+        color: var(--rust);
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 768px) {
+        .news-main-title {
+          font-size: 1.6rem;
+        }
+        .news-card {
+          padding: 20px;
+        }
+        .news-title {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ШАПКА САЙТА -->
+      <header class="app-bar">
+        <div class="app-bar-container">
+          <button
+            type="button"
+            class="drawer-open-btn"
+            id="drawer-open"
+            aria-label="Open menu"
+          >
+            <span class="mdi mdi-menu" aria-hidden="true"></span>
+          </button>
+
+          <div class="app-bar-title">
+            <a href="index.html">
+              <img src="./img/logo.png" alt="A2Z Recyclers Corporate Logo" />
+            </a>
+          </div>
+
+          <div class="app-bar-search">
+            <form action="#" method="get" role="search">
+              <input
+                type="search"
+                placeholder="Search site..."
+                aria-label="Search through site content"
+              />
+              <button type="submit" aria-label="Submit search">
+                <span class="mdi mdi-magnify" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+
+          <nav class="app-bar-links">
+            <ul>
+              <li><a href="./mission.html">Our mission</a></li>
+              <li><a href="./about.html">About us</a></li>
+              <li><a href="./news.html">News</a></li>
+              <li><a href="./contact.html">Contacts</a></li>
+              <li><a href="./login.html" class="login-link">Login</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ИЗОЛИРОВАННЫЕ ВКЛАДКИ -->
+      <nav class="app-tabs">
+        <div class="tabs-container">
+          <a href="./household.html" class="tab-household">Household Guide</a>
+          <a href="./business.html" class="tab-business">Business Solutions</a>
+        </div>
+      </nav>
+
+      <!-- ГЛАВНЫЙ АНИМИРОВАННЫЙ БАННЕР -->
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>A2Z Recyclers</h1>
+          <p>Corporate News Feed & Industrial Updates</p>
+        </div>
+      </section>
+
+      <!-- СЕТКА ОСНОВНОГО КОНТЕНТА -->
+      <div class="wrapper-content">
+        <!-- ЛЕВАЯ КОЛОНКА (Лента новостей) -->
+        <main class="main-content">
+          <h2 class="news-main-title">Latest Announcements</h2>
+
+          <div class="news-feed">
+            <!-- НОВОСТЬ 1 (Важное объявление) -->
+            <article class="news-card alert-news">
+              <div class="news-meta">
+                <span class="news-date">June 12, 2026</span>
+                <span class="news-category">Maintenance</span>
+              </div>
+              <h3 class="news-title">
+                <a href="./news-item.html"
+                  >Scheduled Node Upgrades: Portal Downtime</a
+                >
+              </h3>
+              <p class="news-excerpt">
+                Please be advised that our secure portal infrastructure will
+                undergo comprehensive system optimizations under Gelos
+                Enterprise protocols this coming Sunday. Login servers and
+                dynamic ticket submissions may experience brief intermittent
+                blockages between 02:00 and 05:00 AEST.
+              </p>
+              <a href="./news-item.html" class="news-readmore"
+                >Read full notice &rarr;</a
+              >
+            </article>
+
+            <!-- НОВОСТЬ 2 -->
+            <article class="news-card">
+              <div class="news-meta">
+                <span class="news-date">May 28, 2026</span>
+                <span class="news-category">Community</span>
+              </div>
+              <h3 class="news-title">
+                <a href="./news-item.html"
+                  >Expanding Domestic Sorting Hubs in Pennant Hills</a
+                >
+              </h3>
+              <p class="news-excerpt">
+                Following successful volume metrics compiled during our recent
+                quarterly evaluation, A2Z Recyclers is proud to announce the
+                deployment of two additional automated material collection nodes
+                near the Pennant Hills Community Centre to better process local
+                household loops.
+              </p>
+              <a href="./news-item.html" class="news-readmore"
+                >Read article &rarr;</a
+              >
+            </article>
+
+            <!-- НОВОСТЬ 3 -->
+            <article class="news-card">
+              <div class="news-meta">
+                <span class="news-date">May 15, 2026</span>
+                <span class="news-category">Corporate</span>
+              </div>
+              <h3 class="news-title">
+                <a href="./news-item.html"
+                  >Gelos Enterprise Integrity Report Released</a
+                >
+              </h3>
+              <p class="news-excerpt">
+                The annual transparency framework data audit has been finalized.
+                This comprehensive breakdown features detailed statistics
+                regarding commercial waste deflection rates, industrial
+                logistics performance adjustments, and carbon footprint
+                reduction targets met over the past cycle.
+              </p>
+              <a href="./news-item.html" class="news-readmore"
+                >Read report &rarr;</a
+              >
+            </article>
+          </div>
+        </main>
+
+        <!-- ПРАВАЯ КОЛОНКА (SIDEBAR) -->
+        <aside class="sidebar-content">
+          <div class="clock-widget" aria-label="Current live time">
+            <div class="clock-time" id="live-clock">00:00</div>
+          </div>
+
+          <section class="events-section">
+            <h2 class="events-main-title">Upcoming Events</h2>
+            <div class="event-card">
+              <div class="event-date-badge">
+                <span class="event-month">Jul</span>
+                <span class="event-day">18</span>
+              </div>
+              <div class="event-info">
+                <span class="event-tag">Community Workshop</span>
+                <h3 class="event-title">Household Recycling Seminar</h3>
+                <p class="event-details">
+                  <strong>Location:</strong> Pennant Hills Community Centre
+                </p>
+                <p class="event-description">
+                  Learn practical methods to minimize your domestic trash
+                  footprint, master home plastic sorting guidelines.
+                </p>
+              </div>
+              <div class="event-action">
+                <a href="./contact.html" class="event-reg-btn">Register</a>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- ПОДВАЛ САЙТА -->
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div class="footer-contacts">
+            <h4>Live Support Hotlines</h4>
+            <ul>
+              <li>Phone: <strong>8-800-555-35-35</strong></li>
+              <li>Email: <strong>support@a2z-recyclers.org.au</strong></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="./privacy.html">Privacy Framework</a></li>
+              <li><a href="./helpdesk.html">Helpdesk Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >&copy; 2026 A2Z Recyclers. All rights reserved. Managed under Gelos
+            Enterprise.</span
+          >
+        </div>
+      </footer>
+
+      <!-- ВЫЕЗЖАЮЩЕЕ МЕНЮ (MOBILE DRAWER) -->
+      <div class="drawer-backdrop" id="drawer-backdrop"></div>
+      <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+          <span class="drawer-title-text">Menu</span>
+          <button
+            type="button"
+            class="drawer-close-btn"
+            id="drawer-close"
+            aria-label="Close menu"
+          >
+            <span class="mdi mdi-close" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <ul>
+            <li><a href="./mission.html">Our mission</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./contact.html">Contacts</a></li>
+            <li><a href="./login.html" class="drawer-login-link">Login</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- СКРИПТЫ ДЛЯ DRAWER -->
+    <script src="./js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('drawer-open')
+        const closeBtn = document.getElementById('drawer-close')
+        const drawer = document.getElementById('mobile-drawer')
+        const backdrop = document.getElementById('drawer-backdrop')
+
+        const toggleDrawer = isOpened => {
+          if (isOpened) {
+            drawer.classList.add('is-active')
+            backdrop.classList.add('is-active')
+            document.body.style.overflow = 'hidden'
+          } else {
+            drawer.classList.remove('is-active')
+            backdrop.classList.remove('is-active')
+            document.body.style.overflow = ''
+          }
+        }
+
+        if (openBtn && closeBtn && drawer && backdrop) {
+          openBtn.addEventListener('click', () => toggleDrawer(true))
+          closeBtn.addEventListener('click', () => toggleDrawer(false))
+          backdrop.addEventListener('click', () => toggleDrawer(false))
+        }
+      })
+    </script>
+  </body>
+</html>
