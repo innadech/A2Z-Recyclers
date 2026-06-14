@@ -4,22 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A2Z Recyclers - Home</title>
-    <!-- Подключаем только внешние стили, шрифты ушли в CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <!-- ШАПКА САЙТА (Семантический тег вместо div class="app-bar") -->
       <header class="app-bar">
         <div class="app-bar-container">
-          <!-- Логотип компании (С обязательным alt-текстом для WCAG) -->
+          <button
+            type="button"
+            class="drawer-open-btn"
+            id="drawer-open"
+            aria-label="Open menu"
+          >
+            <span class="mdi mdi-menu" aria-hidden="true"></span>
+          </button>
+
           <div class="app-bar-title">
             <a href="index.html">
               <img src="./img/logo.png" alt="A2Z Recyclers Corporate Logo" />
             </a>
           </div>
 
-          <!-- Форма поиска (С правильными лейблами для доступности) -->
           <div class="app-bar-search">
             <form action="#" method="get" role="search">
               <input
@@ -33,7 +38,6 @@
             </form>
           </div>
 
-          <!-- Десктопная навигация (Скрывается на мобильных устройствах) -->
           <nav class="app-bar-links">
             <ul>
               <li><a href="./mission.html">Our mission</a></li>
@@ -46,7 +50,6 @@
         </div>
       </header>
 
-      <!-- ИЗОЛИРОВАННЫЕ ТОЧКИ ВХОДА (App Tabs / Фиксация при скролле) -->
       <nav class="app-tabs">
         <div class="tabs-container">
           <a href="./household.html" class="tab-household">Household Guide</a>
@@ -54,7 +57,6 @@
         </div>
       </nav>
 
-      <!-- АНИМИРОВАННЫЙ ГРАДИЕНТНЫЙ БАННЕР (Hero Section) -->
       <section class="hero-banner">
         <div class="hero-content">
           <h1>A2Z Recyclers</h1>
@@ -62,15 +64,12 @@
         </div>
       </section>
 
-      <!-- ОСНОВНОЙ КОНТЕНТНЫЙ ДВУХКОЛОНОЧНЫЙ БЛОК -->
       <div class="wrapper-content">
-        <!--ЛЕВАЯ КОЛОНКА (Основной контент страницы) -->
         <main class="main-content">
-          <!-- Блок миссии компании -->
           <section class="mission-container">
             <div class="mission-image-side">
               <img
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
+                src="./img/photo-1542601906990-b4d3fb778b09.avif"
                 alt="Green plant sprouting from recycled soil, symbolizing A2Z Recyclers green vision"
               />
             </div>
@@ -87,14 +86,13 @@
             </div>
           </section>
 
-          <!-- Секция успешных кейсов/проектов -->
           <section class="projects-section">
             <h2 class="projects-main-title">Our Successful Projects</h2>
             <div class="projects-grid">
               <article class="project-card">
                 <div class="project-image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=600&q=80"
+                    src="./img/photo-1532996122724-e3c354a0b15b.avif"
                     alt="Smart automated recycling bins with digital weight sensors from the Ecogenie project"
                   />
                 </div>
@@ -113,7 +111,7 @@
               <article class="project-card">
                 <div class="project-image-wrapper">
                   <img
-                    src="https://images.unsplash.com/photo-1592417817098-8f3d6eb18865?auto=format&fit=crop&w=600&q=80"
+                    src="./img/images.jpeg"
                     alt="Organic compost and fresh green soil representing the Good Food waste initiative"
                   />
                 </div>
@@ -131,7 +129,6 @@
             </div>
           </section>
 
-          <!-- Секция отзывов клиентов -->
           <section class="testimonials-section">
             <h2 class="testimonials-main-title">What Our Community Says</h2>
             <div class="testimonials-grid">
@@ -145,7 +142,7 @@
                 </p>
                 <div class="testimonial-user">
                   <img
-                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80"
+                    src="./img/photo-1544005313-94ddf0286df2.avif"
                     alt="Sarah Jenkins"
                   />
                   <div class="user-details">
@@ -165,7 +162,7 @@
                 </p>
                 <div class="testimonial-user">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
+                    src="./img/photo-1507003211169-0a1dd7228f2d.avif"
                     alt="David Vance"
                   />
                   <div class="user-details">
@@ -180,14 +177,11 @@
           </section>
         </main>
 
-        <!-- ПРАВАЯ КОЛОНКА (Сайдбар для виджетов и анонсов) -->
         <aside class="sidebar-content">
-          <!-- Интерактивный виджет часов (Жестко 112x112px по ТЗ) -->
           <div class="clock-widget" aria-label="Current live time">
             <div class="clock-time" id="live-clock">00:00</div>
           </div>
 
-          <!-- Блок анонса мероприятий (Воркшоп в Pennant Hills) -->
           <section class="events-section">
             <h2 class="events-main-title">Upcoming Events</h2>
             <div class="event-card">
@@ -214,7 +208,6 @@
         </aside>
       </div>
 
-      <!-- ПОДВАЛ САЙТА (Контакты техподдержки фокус-группы и ссылки) -->
       <footer class="app-footer">
         <div class="footer-container">
           <div class="footer-contacts">
@@ -239,7 +232,58 @@
           >
         </div>
       </footer>
+
+      <div class="drawer-backdrop" id="drawer-backdrop"></div>
+      <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+          <span class="drawer-title-text">Menu</span>
+          <button
+            type="button"
+            class="drawer-close-btn"
+            id="drawer-close"
+            aria-label="Close menu"
+          >
+            <span class="mdi mdi-close" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <ul>
+            <li><a href="./mission.html">Our mission</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./contact.html">Contacts</a></li>
+            <li><a href="./login.html" class="drawer-login-link">Login</a></li>
+          </ul>
+        </nav>
+      </aside>
     </div>
+
     <script src="./js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('drawer-open')
+        const closeBtn = document.getElementById('drawer-close')
+        const drawer = document.getElementById('mobile-drawer')
+        const backdrop = document.getElementById('drawer-backdrop')
+
+        const toggleDrawer = isOpened => {
+          if (isOpened) {
+            drawer.classList.add('is-active')
+            backdrop.classList.add('is-active')
+            document.body.style.overflow = 'hidden' // Запрет прокрутки сайта под меню
+          } else {
+            drawer.classList.remove('is-active')
+            backdrop.classList.remove('is-active')
+            document.body.style.overflow = ''
+          }
+        }
+
+        if (openBtn && closeBtn && drawer && backdrop) {
+          openBtn.addEventListener('click', () => toggleDrawer(true))
+          closeBtn.addEventListener('click', () => toggleDrawer(false))
+          backdrop.addEventListener('click', () => toggleDrawer(false))
+        }
+      })
+    </script>
   </body>
 </html>

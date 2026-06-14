@@ -89,15 +89,22 @@ button {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 25px;
 }
 
+.app-bar-title {
+  margin-left: 0;
+}
 .app-bar-title img {
   height: 70px;
   display: block;
 }
 
 /* Поиск */
+.app-bar-search {
+  flex: 1;
+}
 .app-bar-search form {
   display: flex;
   align-items: center;
@@ -105,7 +112,7 @@ button {
   border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 5px 15px;
-  width: 300px;
+  width: 100%;
 }
 
 .app-bar-search input {
@@ -155,6 +162,15 @@ button {
 
 .app-bar-links a.login-link:hover {
   background-color: var(--rust);
+}
+
+/* Кнопка гамбургера (По умолчанию на десктопе скрыта) */
+.drawer-open-btn {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========================================================================
@@ -679,6 +695,88 @@ button {
 }
 
 /* ==========================================================================
+   ADDED. СТИЛИ ДЛЯ ВЫЕЗЖАЮЩЕГО МЕНЮ (MOBILE DRAWER)
+   ========================================================================== */
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--bg-pure);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-drawer.is-active {
+  transform: translateX(280px);
+}
+
+.drawer-header {
+  padding: 20px;
+  background-color: var(--bg-element);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawer-title-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.drawer-close-btn {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+.drawer-nav ul {
+  list-style: none;
+}
+
+.drawer-nav a {
+  display: block;
+  padding: 15px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px solid var(--bg-light);
+}
+
+.drawer-nav a:hover {
+  background-color: var(--bg-light);
+  color: var(--retro-blue);
+}
+
+.drawer-nav a.drawer-login-link {
+  color: var(--retro-blue);
+  font-weight: 700;
+}
+
+/* ==========================================================================
    10. АДАПТИВНОСТЬ И МЕДИА-ЗАПРОСЫ (БРЕЙКПОИНТЫ)
    ========================================================================== */
 /* Адаптация под планшеты */
@@ -704,13 +802,18 @@ button {
 
 /* Адаптация под мобильные телефоны */
 @media screen and (max-width: 768px) {
+  /* СКРЫВАЕМ ДЕСКТОПНЫЕ ССЫЛКИ И ПОКАЗЫВАЕМ ГАМБУРГЕР */
   .app-bar-links {
-    display: none; /* Прячем десктопное меню, оставляем табы разделения */
+    display: none;
   }
 
-  .app-bar-search form {
-    width: 180px;
+  .drawer-open-btn {
+    display: flex;
   }
+
+  /* .app-bar-search form {
+    width: 180px;
+  } */
 
   .tabs-container {
     flex-direction: column;
