@@ -1,301 +1,252 @@
-@import url(https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap);
-@import url(https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css);
+/* ==========================================================================
+   1. ИМПОРТЫ, ШРИФТЫ И ГЛОБАЛЬНЫЕ КОРПОРАТИВНЫЕ ПЕРЕМЕННЫЕ
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css');
 
 :root {
-  /* Фоны */
-  --clr-11: #ffffff;
-  --clr-22: #f4f5f6;
-  --clr-33: #eaebec;
-  --clr-44: #d0d1d2;
-  --clr-55: #bebfc0;
-  --clr-66: #777777;
+  /* Цветовая палитра Gelos Enterprise из ТЗ */
+  --rust: #7b2e0f;
+  --retro-blue: #0156a3;
+  --golden-yellow: #ffa200;
 
-  --clr-00: #2a2b2c;
-  --clr-99: #1a1b1c;
-  --clr-88: #000000;
-
-  --clr-red: #7b2e0f;
-  --clr-blue: #0156a3;
-  --clr-yellow: #ffa200;
+  /* Нейтральная палитра для фонов и интерфейса */
+  --bg-pure: #ffffff;
+  --bg-light: #f4f5f6;
+  --bg-element: #eaebec;
+  --border-color: #d0d1d2;
+  --text-dark: #2a2b2c;
+  --text-muted: #777777;
 }
 
+/* ==========================================================================
+   2. СБРОС СТИЛЕЙ, ГЛОБАЛЬНОЕ НАСЛЕДОВАНИЕ И БАЗОВЫЕ СЕЛЕКТОРЫ
+   ========================================================================== */
 * {
   box-sizing: border-box;
-}
-body {
-  background: var(--clr-11);
   margin: 0;
+  padding: 0;
 }
-h2 {
-  text-indent: 7px;
-}
-textarea {
-  resize: none;
-}
-button {
-  padding: 15px 50px;
-}
-a,
+
 html,
+body {
+  background-color: var(--bg-pure);
+  color: var(--text-dark);
+  /* Шрифт объявлен один раз глобально, все блоки его наследуют */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Общие правила для интерактивных элементов */
+a {
+  color: var(--retro-blue);
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
 input,
 button,
 select,
 textarea {
-  color: var(--clr-99);
-  font-size: 18px;
-  font-family: 'TikTok Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    'slnt' 0,
-    'wdth' 100;
-}
-button,
-select,
-input,
-textarea {
-  padding: 5px 10px;
-  border: 1px solid var(--clr-33);
-  background: var(--clr-33);
-  outline: 0;
-  font-weight: 500;
-  background: var(--clr-55);
-}
-button:hover,
-select:hover,
-input:hover,
-textarea:hover {
-  box-shadow: 0 0 15px 0 var(--clr-22);
-}
-button:focus,
-select:focus,
-input:focus,
-textarea:focus {
-  border: 1px solid var(--clr-11);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
 }
 
-.row {
-  font-size: 0;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.row > * {
-  display: inline-block;
-  font-size: 18px;
-  white-space: normal;
-  overflow: hidden;
-  vertical-align: top;
-  height: 100%;
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
+/* Глобальная обертка макета */
 .wrapper {
-  /* max-width: 576px; */
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   3. ВЕРХНЯЯ ПАНЕЛЬ И НАВИГАЦИЯ (HEADER & APP BAR)
+   ========================================================================== */
+.app-bar {
+  background-color: var(--bg-element);
+  height: 90px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-bar-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-bar-title img {
+  height: 70px;
+  display: block;
+}
+
+/* Поиск */
+.app-bar-search form {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-pure);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 5px 15px;
+  width: 300px;
+}
+
+.app-bar-search input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding-right: 10px;
+  font-size: 0.9rem;
+}
+
+.app-bar-search button {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.app-bar-search button:hover {
+  color: var(--retro-blue);
+}
+
+/* Навигационные ссылки (Десктоп) */
+.app-bar-links ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.app-bar-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.app-bar-links a:hover {
+  color: var(--retro-blue);
+}
+
+.app-bar-links a.login-link {
+  background-color: var(--retro-blue);
+  color: var(--bg-pure);
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.app-bar-links a.login-link:hover {
+  background-color: var(--rust);
+}
+
+/* ==========================================================================
+   4. ИЗОЛИРОВАННЫЕ ВКЛАДКИ (APP TABS)
+   ========================================================================== */
+.app-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-light);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tabs-container {
+  display: flex;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.app-bar {
-  padding: 0 5px;
-  height: 96px;
-  line-height: 96px;
-  background: var(--clr-33);
-  position: relative;
-}
-.app-bar > div {
-  padding: 0 10px;
-}
-.app-bar-title {
-  width: 118px;
-  font-size: 22px;
-  font-weight: 800;
-}
-.app-bar-title > a {
-  display: inline-block;
-  height: 100%;
-}
-.app-bar-title > a > img {
-  height: 80px;
-  margin: 5px;
-}
-.app-bar-menu {
-  width: 52px;
-}
-.app-bar-menu > button > span {
-  font-size: 32px;
-}
-.app-bar-menu > button:focus + .toolbar {
-  left: 0;
-}
-.app-bar-menu > button,
-.app-bar-menu > button:hover,
-.app-bar-menu > button:focus {
-  background: transparent;
-  padding: 0;
-  border: 0;
-  box-shadow: none;
-  cursor: pointer;
-}
-.app-bar-search {
-  width: calc(100% - 52px - 118px);
+.app-tabs a {
+  flex: 1;
   text-align: center;
-  font-size: 0;
-  form {
-    display: inline-block;
-  }
-  [type='search'] {
-    background: var(--clr-44);
-  }
+  padding: 15px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  background-color: var(--bg-element);
+  border-right: 1px solid var(--border-color);
 }
 
-.app-tabs {
-  white-space: normal;
-  position: sticky;
-  z-index: 2;
-  top: 0;
-  /* background-color: azure; */
-  a {
-    font-weight: 600;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
-    width: calc(100% / 1);
-    /* transition: all 200ms ease; */
-    background: var(--clr-44);
-  }
-  a:hover {
-    background: var(--clr-55);
-  }
+.app-tabs a:last-child {
+  border-right: none;
 }
 
-@media screen and (min-width: 768px) {
-  .app-tabs a {
-    width: calc(100% / 2);
-  }
+.app-tabs a.tab-household:hover {
+  background-color: var(--golden-yellow);
+  color: #000000;
 }
 
-.toolbar {
-  padding: 0 5px;
-  background: var(--clr-22);
-  position: fixed;
-  width: 280px;
-  top: 0;
-  bottom: 0;
-  z-index: 3;
-  left: -300px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px 0 var(--clr-11);
-}
-.toolbar:focus-within {
-  left: 0;
+.app-tabs a.tab-business:hover {
+  background-color: var(--retro-blue);
+  color: var(--bg-pure);
 }
 
-.toolbar-bar {
-  height: 96px;
-}
-.toolbar-bar > div {
-  padding: 0 10px;
-}
-.toolbar ul {
-  padding-top: 15px;
-  line-height: 36px;
-  list-style: none;
-}
-
-footer ul {
-  margin-bottom: 35px;
-  padding: 0 15px;
-  line-height: 36px;
-  list-style: none;
-}
-
-footer {
-  text-align: center;
-  padding: 25px;
-  color: var(--clr-22);
-  /* position: absolute; */
-  /* bottom: 0;
-  left: 0;
-  right: 0; */
-  background: var(--clr-blue);
-  a {
-    color: var(--clr-22);
-  }
-  a:hover {
-    color: var(--clr-11);
-  }
-}
-footer > div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
+/* ==========================================================================
+   5. ГЛАВНЫЙ АНИМИРОВАННЫЙ БАННЕР (HERO BANNER)
+   ========================================================================== */
 .hero-banner {
-  /* position: relative; */
   width: 100%;
-  height: 350px; /* Оптимальная высота для десктопа */
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
-
-  /* Живой градиентный фон из трех цветов ТЗ */
   background: linear-gradient(
     -45deg,
-    var(--clr-red),
-    var(--clr-blue),
-    var(--clr-yellow),
-    var(--clr-red)
+    var(--rust),
+    var(--retro-blue),
+    var(--golden-yellow),
+    var(--rust)
   );
   background-size: 400% 400%;
-
-  /* Анимация движения фона */
   animation: gradientShift 12s ease infinite;
 }
 
 .hero-content {
-  /* max-width: 800px; */
   padding: 0 20px;
-  /* z-index: 2; */
 }
 
 .hero-banner h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--clr-22);
+  font-weight: 800;
+  color: var(--bg-pure);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 15px;
   text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
-
-  /* Анимация плавного появления и сдвига текста */
-  animation: fadeInUp 1.5s ease-out forwards;
+  animation: fadeInUp 1.2s ease-out forwards;
 }
 
 .hero-banner p {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
-  color: var(--clr-22);
+  color: var(--bg-light);
   font-weight: 300;
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
-
-  /* Анимация появления подзаголовка с задержкой */
-  animation: fadeInUp 1.5s ease-out 0.5s forwards;
-  opacity: 0; /* Изначально скрыт, пока не сработает задержка */
+  animation: fadeInUp 1.2s ease-out 0.4s forwards;
+  opacity: 0;
 }
 
-/* --- ЭФФЕКТЫ АНИМАЦИИ (CSS @keyframes) --- */
-
-/* 1. Плавное переливание фонового градиента */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -308,11 +259,10 @@ footer > div {
   }
 }
 
-/* 2. Выплывание текста снизу вверх с проявлением */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -320,90 +270,46 @@ footer > div {
   }
 }
 
-/* Адаптивность под мобильные устройства (Медиа-запросы из ТЗ) */
-@media screen and (max-width: 768px) {
-  .hero-banner {
-    height: 250px; /* Уменьшаем высоту на мобилках */
-  }
-  .hero-banner h1 {
-    font-size: 2.2rem;
-  }
-  .hero-banner p {
-    font-size: 1.1rem;
-  }
+/* ==========================================================================
+   6. СЕТКА ОСНОВНОГО КОНТЕНТА (MAIN & SIDEBAR GRID)
+   ========================================================================== */
+.wrapper-content {
+  max-width: 1240px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 2.8fr 1.2fr; /* Точная пропорция колонок */
+  gap: 40px;
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-.clock-widget {
-  margin: 0 auto;
-  /* Жесткое требование из ТЗ: размер 112 на 112 пикселей */
-  width: 112px;
-  height: 112px;
-
-  /* Фирменные цвета и форма */
-  background-color: var(--clr-yellow);
-  border: 3px solid var(--clr-red);
-  border-radius: 50%; /* Делаем виджет круглым */
-
-  /* Центрирование текста внутри круга */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Эффект тени для соответствия современному UI */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-
-  /* Чтобы виджет не сжимался в flex-контейнерах */
-  flex-shrink: 0;
-}
-
-.clock-time {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--clr-red);
-  letter-spacing: 1px;
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
+/* ==========================================================================
+   7. ЛЕВАЯ КОЛОНКА: МИССИЯ, ПРОЕКТЫ, ОТЗЫВЫ
+   ========================================================================== */
+/* Контейнер Миссии */
 .mission-container {
   display: flex;
-  background-color: var(--clr-33);
-  /* border: 1px solid #e0e0e0; */
-  border-left: 8px solid var(--clr-blue); /* Перенесли акцентную линию в рамку контейнера */
+  background-color: var(--bg-light);
+  border-left: 8px solid var(--retro-blue);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   overflow: hidden;
-  line-height: 1.25; /* Требование ТЗ по интервалу */
+  line-height: 1.25; /* Требование ТЗ */
 }
 
-/* Стили для стороны с картинкой */
 .mission-image-side {
   flex: 1;
-  min-width: 250px;
-  max-width: 350px;
-  /* position: relative; */
+  min-width: 220px;
+  max-width: 300px;
 }
 
 .mission-image-side img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Картинка заполнит блок без искажений */
+  object-fit: cover;
   display: block;
 }
 
-/* Сторона с текстом */
 .mission-content {
   flex: 2;
   padding: 30px;
@@ -416,93 +322,54 @@ footer > div {
 
 .mission-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: var(--clr-blue);
-  margin: 0;
+  color: var(--retro-blue);
 }
 
 .mission-text {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.05rem;
-  color: var(--clr-99);
-  margin: 0;
+  color: var(--text-dark);
 }
 
 .mission-btn {
   display: inline-block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--clr-22);
-  background-color: var(--clr-blue);
+  font-size: 0.95rem;
+  color: var(--bg-pure);
+  background-color: var(--retro-blue);
   padding: 12px 24px;
   border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
 }
 
 .mission-btn:hover {
-  background-color: var(--clr-red);
+  background-color: var(--rust);
 }
-
-/* Адаптивность для мобильных (брейкпоинт 768px из ТЗ) */
-@media screen and (max-width: 992px) {
-  .mission-container {
-    flex-direction: column; /* Схлопывается в одну колонку */
-  }
-
-  .mission-image-side {
-    max-width: 100%;
-    width: 100%;
-    height: 200px; /* Фиксированная высота для мобильного экрана */
-  }
-
-  .mission-content {
-    padding: 20px;
-  }
-
-  .mission-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
 
 /* Секция проектов */
 .projects-section {
   margin-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.25; /* Требование ТЗ по интервалу */
 }
 
-/* Главный заголовок секции */
 .projects-main-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--clr-yellow);
+  color: var(--rust);
   margin-bottom: 25px;
-  /* border-bottom: 2px solid #e0e0e0; */
   padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-element);
 }
 
-/* Двухколоночная сетка для десктопа */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
-/* Карточка отдельного проекта */
 .project-card {
-  background-color: var(--clr-33);
-  /* border: 1px solid #e0e0e0; */
+  background-color: var(--bg-light);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -510,12 +377,10 @@ footer > div {
   flex-direction: column;
 }
 
-/* Контейнер для фотографии */
 .project-image-wrapper {
   width: 100%;
-  height: 220px;
+  height: 200px;
   overflow: hidden;
-  position: relative;
 }
 
 .project-image-wrapper img {
@@ -526,12 +391,10 @@ footer > div {
   transition: transform 0.3s ease;
 }
 
-/* Легкий интерактивный эффект при наведении на карточку */
 .project-card:hover .project-image-wrapper img {
   transform: scale(1.04);
 }
 
-/* Блок с текстовой информацией внутри карточки */
 .project-info {
   padding: 20px;
   display: flex;
@@ -540,7 +403,6 @@ footer > div {
   flex-grow: 1;
 }
 
-/* Метка/категория проекта */
 .project-badge {
   display: inline-block;
   align-self: flex-start;
@@ -548,80 +410,49 @@ footer > div {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: rgba(1, 86, 163, 0.1); /* Прозрачный синий */
-  color: var(--clr-blue);
+  background-color: rgba(1, 86, 163, 0.1);
+  color: var(--retro-blue);
   padding: 4px 10px;
   border-radius: 4px;
 }
 
-/* Название проекта */
 .project-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--clr-99);
-  margin: 0;
+  color: var(--text-dark);
 }
 
-/* Описание проекта */
 .project-description {
   font-size: 0.95rem;
-  color: var(--clr-99);
-  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.3;
 }
 
-/* Адаптивность для мобильных устройств (брейкпоинт 768px из ТЗ) */
-@media screen and (max-width: 992px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* Перестраиваем сетку в одну колонку */
-    gap: 20px;
-  }
-
-  .project-image-wrapper {
-    height: 180px; /* Немного уменьшаем высоту фото на мобильных */
-  }
-
-  .projects-main-title {
-    font-size: 1.6rem;
-  }
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-/* Секция отзывов целиком */
+/* Секция отзывов */
 .testimonials-section {
   margin-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.25; /* Требование ТЗ по интервалу */
 }
 
-/* Заголовок секции */
 .testimonials-main-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--clr-blue);
+  color: var(--retro-blue);
   margin-bottom: 25px;
-  /* border-bottom: 2px solid #e0e0e0; */
   padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-element);
 }
 
-/* Сетка для десктопа — две колонки */
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
 
-/* Карточка отзыва */
 .testimonial-card {
-  background-color: var(--clr-33);
-  /* border: 1px solid #e0e0e0; */
-  border-top: 4px solid var(--clr-yellow); /* Золотой акцент сверху */
+  background-color: var(--bg-light);
+  border-top: 4px solid var(--golden-yellow);
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -631,300 +462,290 @@ footer > div {
   position: relative;
 }
 
-/* Декоративная кавычка */
 .testimonial-quote-icon {
   font-family: 'Montserrat', sans-serif;
   font-size: 4rem;
-  color: rgba(255, 162, 0, 0.2); /* Очень прозрачный золотой */
+  color: rgba(255, 162, 0, 0.15);
   position: absolute;
-  top: 10px;
-  left: 20px;
+  top: 5px;
+  left: 15px;
   line-height: 1;
 }
 
-/* Текст самого отзыва */
 .testimonial-text {
-  font-size: 1rem;
-  color: var(--clr-00);
+  font-size: 0.95rem;
+  color: var(--text-dark);
   font-style: italic;
   margin-bottom: 20px;
-  /* z-index: 1; */
-  /* Чтобы текст был поверх декоративной кавычки */
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
 }
 
-/* Блок автора отзыва (фото + инфо) */
 .testimonial-user {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Круглая фотография пользователя */
 .testimonial-user img {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  /* border: 2px solid var(--clr-blue); */
-}
-
-/* Текстовые данные автора */
-.user-details {
-  display: flex;
-  flex-direction: column;
+  border: 2px solid var(--retro-blue);
 }
 
 .user-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--clr-99);
-  margin: 0;
 }
 
 .user-role {
-  font-size: 0.85rem;
-  color: var(--clr-66);
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
-/* Адаптивность для мобильных устройств (брейкпоинт 768px из ТЗ) */
-@media screen and (max-width: 992px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr; /* Перестраиваем в одну колонку */
-    gap: 20px;
-  }
-
-  .testimonial-card {
-    padding: 20px;
-  }
-
-  .testimonials-main-title {
-    font-size: 1.6rem;
-  }
-}
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-
-/* Секция мероприятий */
-.events-section {
-  margin-bottom: 40px;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.25; /* Требование ТЗ */
-}
-
-/* Заголовок секции */
-.events-main-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--clr-red);
-  margin-bottom: 25px;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 10px;
-}
-
-/* Карточка события (Флексбокс-строка на десктопе) */
-.event-card {
-  background-color: var(--clr-33);
-  /* border: 1px solid #e0e0e0; */
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.event-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-}
-
-/* Календарная плашка (Использует фирменный ржавый цвет) */
-.event-date-badge {
-  background-color: var(--clr-red);
-  color: var(--clr-11);
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
+/* ==========================================================================
+   8. ПРАВАЯ КОЛОНКА (SIDEBAR): ЧАСЫ И АНОНСЫ
+   ========================================================================== */
+.sidebar-content {
   display: flex;
   flex-direction: column;
+  gap: 35px;
+}
+
+/* Виджет рабочих часов (Строго 112x112px по ТЗ) */
+.clock-widget {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto;
+  background-color: var(--golden-yellow);
+  border: 3px solid var(--rust);
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.clock-time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rust);
+  letter-spacing: 1px;
+}
+
+/* Блок мероприятий */
+.events-main-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--rust);
+  margin-bottom: 20px;
+}
+
+.event-card {
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.event-date-badge {
+  background-color: var(--rust);
+  color: var(--bg-pure);
+  padding: 8px 15px;
+  border-radius: 6px;
+  display: inline-flex;
+  gap: 6px;
+  align-self: flex-start;
 }
 
 .event-month {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .event-day {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   font-weight: 700;
   line-height: 1;
 }
 
-/* Информация о событии */
-.event-info {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Маленький тег типа события */
 .event-tag {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--clr-blue);
+  color: var(--retro-blue);
   text-transform: uppercase;
 }
 
-/* Название воркшопа */
 .event-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--clr-99);
-  margin: 0;
+  margin: 5px 0;
 }
 
-/* Время и локация */
 .event-details {
-  font-size: 0.9rem;
-  color: var(--clr-66);
-  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 5px;
 }
 
-/* Описание */
 .event-description {
-  font-size: 0.95rem;
-  color: var(--clr-88);
-  margin: 0;
-}
-
-/* Контейнер кнопки */
-.event-action {
-  flex-shrink: 0;
-}
-
-/* Кнопка регистрации (Использует фирменный синий цвет) */
-.event-reg-btn {
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #ffffff;
-  background-color: var(--clr-blue);
-  padding: 12px 24px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-  white-space: nowrap;
-}
-
-.event-reg-btn:hover {
-  background-color: var(--clr-yellow);
-  color: var(--clr-33); /* На золотом фоне лучше читается темный текст */
-}
-
-/* Адаптивность для мобильных устройств (брейкпоинт 768px) */
-.event-card {
-  flex-direction: column; /* Перестраиваем строку в колонку */
-  align-items: flex-start;
-  gap: 15px;
-  padding: 20px;
-}
-
-.event-date-badge {
-  flex-direction: row; /* На мобилке дату можно сделать компактнее в строчку */
-  width: auto;
-  height: auto;
-  padding: 6px 12px;
-  gap: 6px;
-}
-
-.event-day {
-  font-size: 1.1rem;
-}
-
-.event-action {
-  width: 100%;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.3;
 }
 
 .event-reg-btn {
   display: block;
   width: 100%;
   text-align: center;
-  box-sizing: border-box;
+  background-color: var(--retro-blue);
+  color: var(--bg-pure);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 4px;
 }
 
-.events-main-title {
-  font-size: 1.6rem;
+.event-reg-btn:hover {
+  background-color: var(--golden-yellow);
+  color: #000000;
 }
 
-.wrapper-content > main {
-  flex: 3;
-}
-.wrapper-content > aside {
-  flex: 1;
+/* ==========================================================================
+   9. ПОДВАЛ САЙТА (FOOTER)
+   ========================================================================== */
+.app-footer {
+  background-color: var(--retro-blue);
+  color: var(--bg-light);
+  padding: 40px 20px 20px 20px;
+  margin-top: auto;
 }
 
-.app-bar-links {
-  display: none;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 30px;
+}
+
+.app-footer h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--golden-yellow);
+}
+
+.app-footer ul {
+  list-style: none;
+}
+
+.app-footer li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.app-footer a {
+  color: var(--bg-light);
+}
+
+.app-footer a:hover {
+  color: var(--golden-yellow);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 20px auto 0 auto;
   text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-/* 576px, 768px и 992px */
-
-@media screen and (min-width: 576px) {
+/* ==========================================================================
+   10. АДАПТИВНОСТЬ И МЕДИА-ЗАПРОСЫ (БРЕЙКПОИНТЫ)
+   ========================================================================== */
+/* Адаптация под планшеты */
+@media screen and (max-width: 992px) {
   .wrapper-content {
-    display: flex;
+    grid-template-columns: 1fr; /* Переводим двухколоночный грид в одну ленту */
+    gap: 30px;
   }
-  main,
-  aside {
-    padding: 5px;
+
+  .sidebar-content {
+    flex-direction: column-reverse; /* Мероприятия вверх, часы вниз */
+  }
+
+  .mission-container {
+    flex-direction: column;
+  }
+
+  .mission-image-side {
+    max-width: 100%;
+    height: 220px;
   }
 }
 
-@media screen and (min-width: 768px) {
-  footer > div {
-    flex-direction: row;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .app-bar {
-    /* height: 120px; */
-  }
-  .app-bar-search {
-    width: calc(100% - 118px - 550px);
-  }
-
+/* Адаптация под мобильные телефоны */
+@media screen and (max-width: 768px) {
   .app-bar-links {
-    display: inline-block;
-    width: 550px;
-    ul {
-      padding: 0;
-    }
-    li {
-      padding: 0 15px;
-    }
+    display: none; /* Прячем десктопное меню, оставляем табы разделения */
   }
-  .app-bar-menu {
-    display: none;
+
+  .app-bar-search form {
+    width: 180px;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+  }
+
+  .app-tabs a {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+  }
+
+  .hero-banner {
+    height: 250px;
+  }
+
+  .hero-banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-banner p {
+    font-size: 1.1rem;
+  }
+
+  .projects-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-main-title,
+  .testimonials-main-title {
+    font-size: 1.6rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 25px;
   }
 }

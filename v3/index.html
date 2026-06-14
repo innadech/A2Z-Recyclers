@@ -3,69 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A2Z-Recyclers</title>
+    <title>A2Z Recyclers - Home</title>
+    <!-- Подключаем только внешние стили, шрифты ушли в CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <header class="app-bar row">
-        <div class="app-bar-menu">
-          <button>
-            <span class="mdi mdi-menu"></span>
-          </button>
-          <div class="toolbar">
-            <div class="toolbar-bar row">
-              <div class="app-bar-menu">
-                <button>
-                  <span class="mdi mdi-menu"></span>
-                </button>
-              </div>
-              <div class="app-bar-title">
-                <a href=".">
-                  <img src="./img/logo.png" height="80" alt="" />
-                </a>
-              </div>
-            </div>
-            <div>
-              <ul>
-                <li><a href="./mission.html">Our mission</a></li>
-                <li><a href="./about.html">About us</a></li>
-                <li><a href="./news.html">News</a></li>
-                <li><a href="./contact.html">Contacts</a></li>
-                <li><a href="./login.html">Login</a></li>
-              </ul>
-            </div>
+      <!-- ШАПКА САЙТА (Семантический тег вместо div class="app-bar") -->
+      <header class="app-bar">
+        <div class="app-bar-container">
+          <!-- Логотип компании (С обязательным alt-текстом для WCAG) -->
+          <div class="app-bar-title">
+            <a href="index.html">
+              <img src="./img/logo.png" alt="A2Z Recyclers Corporate Logo" />
+            </a>
           </div>
-        </div>
-        <div class="app-bar-title">
-          <a href=".">
-            <img src="./img/logo.png" height="80" alt="" />
-          </a>
-        </div>
 
-        <div class="app-bar-search">
-          <form action="">
-            <input type="search" />
-            <button type="submit"><span class="mdi mdi-magnify"></span></button>
-          </form>
-        </div>
+          <!-- Форма поиска (С правильными лейблами для доступности) -->
+          <div class="app-bar-search">
+            <form action="#" method="get" role="search">
+              <input
+                type="search"
+                placeholder="Search site..."
+                aria-label="Search through site content"
+              />
+              <button type="submit" aria-label="Submit search">
+                <span class="mdi mdi-magnify" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
 
-        <div class="app-bar-links">
-          <ul class="row">
-            <li><a href="./mission.html">Our mission</a></li>
-            <li><a href="./about.html">About us</a></li>
-            <li><a href="./news.html">News</a></li>
-            <li><a href="./contact.html">Contacts</a></li>
-            <li><a href="./login.html">Login</a></li>
-          </ul>
+          <!-- Десктопная навигация (Скрывается на мобильных устройствах) -->
+          <nav class="app-bar-links">
+            <ul>
+              <li><a href="./mission.html">Our mission</a></li>
+              <li><a href="./about.html">About us</a></li>
+              <li><a href="./news.html">News</a></li>
+              <li><a href="./contact.html">Contacts</a></li>
+              <li><a href="./login.html" class="login-link">Login</a></li>
+            </ul>
+          </nav>
         </div>
       </header>
 
-      <nav class="app-tabs row">
-        <a href="./household.html">Household Guide</a>
-        <a href="./business.html">Business Solutions</a>
+      <!-- ИЗОЛИРОВАННЫЕ ТОЧКИ ВХОДА (App Tabs / Фиксация при скролле) -->
+      <nav class="app-tabs">
+        <div class="tabs-container">
+          <a href="./household.html" class="tab-household">Household Guide</a>
+          <a href="./business.html" class="tab-business">Business Solutions</a>
+        </div>
       </nav>
 
+      <!-- АНИМИРОВАННЫЙ ГРАДИЕНТНЫЙ БАННЕР (Hero Section) -->
       <section class="hero-banner">
         <div class="hero-content">
           <h1>A2Z Recyclers</h1>
@@ -73,16 +62,18 @@
         </div>
       </section>
 
+      <!-- ОСНОВНОЙ КОНТЕНТНЫЙ ДВУХКОЛОНОЧНЫЙ БЛОК -->
       <div class="wrapper-content">
-        <main>
-          <div class="mission-container">
+        <!--ЛЕВАЯ КОЛОНКА (Основной контент страницы) -->
+        <main class="main-content">
+          <!-- Блок миссии компании -->
+          <section class="mission-container">
             <div class="mission-image-side">
               <img
                 src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80"
                 alt="Green plant sprouting from recycled soil, symbolizing A2Z Recyclers green vision"
               />
             </div>
-
             <div class="mission-content">
               <h2 class="mission-title">Our Green Vision</h2>
               <p class="mission-text">
@@ -94,8 +85,9 @@
               </p>
               <a href="./mission.html" class="mission-btn">Read Full Mission</a>
             </div>
-          </div>
+          </section>
 
+          <!-- Секция успешных кейсов/проектов -->
           <section class="projects-section">
             <h2 class="projects-main-title">Our Successful Projects</h2>
             <div class="projects-grid">
@@ -121,7 +113,7 @@
               <article class="project-card">
                 <div class="project-image-wrapper">
                   <img
-                    src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTrT5cVuSWloIR4VfRpsVyhtu6YtYbVVv8Pr_BBq1tYdLnr6HbR6Y-f-4gVc5PW"
+                    src="https://images.unsplash.com/photo-1592417817098-8f3d6eb18865?auto=format&fit=crop&w=600&q=80"
                     alt="Organic compost and fresh green soil representing the Good Food waste initiative"
                   />
                 </div>
@@ -139,11 +131,12 @@
             </div>
           </section>
 
+          <!-- Секция отзывов клиентов -->
           <section class="testimonials-section">
             <h2 class="testimonials-main-title">What Our Community Says</h2>
             <div class="testimonials-grid">
               <div class="testimonial-card">
-                <div class="testimonial-quote-icon">“</div>
+                <span class="testimonial-quote-icon" aria-hidden="true">“</span>
                 <p class="testimonial-text">
                   "The residential sorting guides on this site completely
                   changed how our family manages waste. Attending the workshop
@@ -153,7 +146,7 @@
                 <div class="testimonial-user">
                   <img
                     src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&h=120&q=80"
-                    alt="Photograph of Sarah Jenkins, local resident from Pennant Hills"
+                    alt="Sarah Jenkins"
                   />
                   <div class="user-details">
                     <h4 class="user-name">Sarah Jenkins</h4>
@@ -163,7 +156,7 @@
               </div>
 
               <div class="testimonial-card">
-                <div class="testimonial-quote-icon">“</div>
+                <span class="testimonial-quote-icon" aria-hidden="true">“</span>
                 <p class="testimonial-text">
                   "Using the Business Solutions platform allowed our logistics
                   center to establish efficient upcycle stations. Tracing our
@@ -173,7 +166,7 @@
                 <div class="testimonial-user">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80"
-                    alt="Photograph of David Vance, Operations Manager at Gelos Logistics"
+                    alt="David Vance"
                   />
                   <div class="user-details">
                     <h4 class="user-name">David Vance</h4>
@@ -187,57 +180,64 @@
           </section>
         </main>
 
-        <aside>
-          <div class="clock-widget" aria-label="Current time clock">
+        <!-- ПРАВАЯ КОЛОНКА (Сайдбар для виджетов и анонсов) -->
+        <aside class="sidebar-content">
+          <!-- Интерактивный виджет часов (Жестко 112x112px по ТЗ) -->
+          <div class="clock-widget" aria-label="Current live time">
             <div class="clock-time" id="live-clock">00:00</div>
           </div>
 
+          <!-- Блок анонса мероприятий (Воркшоп в Pennant Hills) -->
           <section class="events-section">
-            <h2 class="events-main-title">Upcoming Workshops & Events</h2>
-
+            <h2 class="events-main-title">Upcoming Events</h2>
             <div class="event-card">
               <div class="event-date-badge">
                 <span class="event-month">Jul</span>
                 <span class="event-day">18</span>
               </div>
-
               <div class="event-info">
                 <span class="event-tag">Community Workshop</span>
-                <h3 class="event-title">
-                  Household Recycling & Composting Seminar
-                </h3>
+                <h3 class="event-title">Household Recycling Seminar</h3>
                 <p class="event-details">
-                  <strong>Location:</strong> Community Centre, Pennant Hills |
-                  <strong>Time:</strong> 10:00 AM - 1:00 PM
+                  <strong>Location:</strong> Pennant Hills Community Centre
                 </p>
                 <p class="event-description">
                   Learn practical methods to minimize your domestic trash
-                  footprint, master home plastic sorting guidelines, and
-                  discover the basics of organic composting. Perfect for local
-                  families and eco-enthusiasts.
+                  footprint, master home plastic sorting guidelines.
                 </p>
               </div>
-
               <div class="event-action">
-                <a href="./contact.html" class="event-reg-btn">Register Now</a>
+                <a href="./contact.html" class="event-reg-btn">Register</a>
               </div>
             </div>
           </section>
         </aside>
       </div>
 
-      <footer class="copyrights">
-        <div>
-          <ul>
-            <li>8-800-555-35-35</li>
-            <li>support@a2z-recyclers.org.au</li>
-          </ul>
-          <ul>
-            <li><a href="./mission.html">Privacy</a></li>
-            <li><a href="./about.html">Helpdesk</a></li>
-          </ul>
+      <!-- ПОДВАЛ САЙТА (Контакты техподдержки фокус-группы и ссылки) -->
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div class="footer-contacts">
+            <h4>Live Support Hotlines</h4>
+            <ul>
+              <li>Phone: <strong>8-800-555-35-35</strong></li>
+              <li>Email: <strong>support@a2z-recyclers.org.au</strong></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="./privacy.html">Privacy Framework</a></li>
+              <li><a href="./helpdesk.html">Helpdesk Center</a></li>
+            </ul>
+          </div>
         </div>
-        <span>©2026 A2Z-Recyclers</span>
+        <div class="footer-bottom">
+          <span
+            >&copy; 2026 A2Z Recyclers. All rights reserved. Managed under Gelos
+            Enterprise.</span
+          >
+        </div>
       </footer>
     </div>
     <script src="./js/script.js"></script>
