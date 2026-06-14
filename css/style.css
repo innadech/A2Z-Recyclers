@@ -1,16 +1,11 @@
-/* ==========================================================================
-   1. ИМПОРТЫ, ШРИФТЫ И ГЛОБАЛЬНЫЕ КОРПОРАТИВНЫЕ ПЕРЕМЕННЫЕ
-   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css');
 
 :root {
-  /* Цветовая палитра Gelos Enterprise из ТЗ */
   --rust: #7b2e0f;
   --retro-blue: #0156a3;
   --golden-yellow: #ffa200;
 
-  /* Нейтральная палитра для фонов и интерфейса */
   --bg-pure: #ffffff;
   --bg-light: #f4f5f6;
   --bg-element: #eaebec;
@@ -19,9 +14,6 @@
   --text-muted: #777777;
 }
 
-/* ==========================================================================
-   2. СБРОС СТИЛЕЙ, ГЛОБАЛЬНОЕ НАСЛЕДОВАНИЕ И БАЗОВЫЕ СЕЛЕКТОРЫ
-   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -32,13 +24,11 @@ html,
 body {
   background-color: var(--bg-pure);
   color: var(--text-dark);
-  /* ШРИФТ ИЗМЕНЕН: Основной текст теперь Montserrat */
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Общие правила для интерактивных элементов */
 a {
   color: var(--retro-blue);
   text-decoration: none;
@@ -51,7 +41,6 @@ input,
 button,
 select,
 textarea {
-  /* ШРИФТ ИЗМЕНЕН: Montserrat для элементов форм */
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: var(--text-dark);
@@ -64,7 +53,6 @@ button {
   background: none;
 }
 
-/* Глобальная обертка макета */
 .wrapper {
   width: 100%;
   max-width: 1400px;
@@ -74,9 +62,6 @@ button {
   flex-direction: column;
 }
 
-/* ==========================================================================
-   3. ВЕРХНЯЯ ПАНЕЛЬ И НАВИГАЦИЯ (HEADER & APP BAR)
-   ========================================================================== */
 .app-bar {
   background-color: var(--bg-element);
   height: 90px;
@@ -102,7 +87,6 @@ button {
   display: block;
 }
 
-/* Поиск */
 .app-bar-search {
   flex: 1;
 }
@@ -135,7 +119,6 @@ button {
   color: var(--retro-blue);
 }
 
-/* Навигационные ссылки (Десктоп) */
 .app-bar-links ul {
   display: flex;
   list-style: none;
@@ -144,7 +127,6 @@ button {
 }
 
 .app-bar-links a {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для ссылок в шапке */
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
@@ -166,7 +148,6 @@ button {
   background-color: var(--rust);
 }
 
-/* Кнопка гамбургера (По умолчанию на десктопе скрыта) */
 .drawer-open-btn {
   display: none;
   font-size: 1.8rem;
@@ -175,9 +156,6 @@ button {
   justify-content: center;
 }
 
-/* ==========================================================================
-   4. ИЗОЛИРОВАННЫЕ ВКЛАДКИ (APP TABS)
-   ========================================================================== */
 .app-tabs {
   position: sticky;
   top: 0;
@@ -196,7 +174,6 @@ button {
   flex: 1;
   text-align: center;
   padding: 15px 20px;
-  /* ШРИФТ ИЗМЕНЕН: Roboto для табов */
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
@@ -219,9 +196,6 @@ button {
   color: var(--bg-pure);
 }
 
-/* ==========================================================================
-   5. ГЛАВНЫЙ АНИМИРОВАННЫЙ БАННЕР (HERO BANNER)
-   ========================================================================== */
 .hero-banner {
   width: 100%;
   height: 350px;
@@ -246,7 +220,6 @@ button {
 }
 
 .hero-banner h1 {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для главного заголовка */
   font-family: 'Roboto', sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
@@ -290,22 +263,15 @@ button {
   }
 }
 
-/* ==========================================================================
-   6. СЕТКА ОСНОВНОГО КОНТЕНТА (MAIN & SIDEBAR GRID)
-   ========================================================================== */
 .wrapper-content {
   max-width: 1240px;
   margin: 40px auto;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: 2.8fr 1.2fr; /* Точная пропорция колонок */
+  grid-template-columns: 2.8fr 1.2fr;
   gap: 40px;
 }
 
-/* ==========================================================================
-   7. ЛЕВАЯ КОЛОНКА: МИССИЯ, ПРОЕКТЫ, ОТЗЫВЫ
-   ========================================================================== */
-/* Контейнер Миссии */
 .mission-container {
   display: flex;
   background-color: var(--bg-light);
@@ -314,7 +280,7 @@ button {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   margin-bottom: 40px;
   overflow: hidden;
-  line-height: 1.25; /* Требование ТЗ */
+  line-height: 1.25;
 }
 
 .mission-image-side {
@@ -341,7 +307,6 @@ button {
 }
 
 .mission-title {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка миссии */
   font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
@@ -355,7 +320,6 @@ button {
 
 .mission-btn {
   display: inline-block;
-  /* ШРИФТ ИЗМЕНЕН: Roboto для кнопки миссии */
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
@@ -369,13 +333,11 @@ button {
   background-color: var(--rust);
 }
 
-/* Секция проектов */
 .projects-section {
   margin-bottom: 40px;
 }
 
 .projects-main-title {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка секции проектов */
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -429,7 +391,6 @@ button {
 .project-badge {
   display: inline-block;
   align-self: flex-start;
-  /* ШРИФТ ИЗМЕНЕН: Roboto для бейджа проекта */
   font-family: 'Roboto', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -441,7 +402,6 @@ button {
 }
 
 .project-title {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для названия проекта */
   font-family: 'Roboto', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
@@ -454,13 +414,11 @@ button {
   line-height: 1.3;
 }
 
-/* Секция отзывов */
 .testimonials-section {
   margin-bottom: 40px;
 }
 
 .testimonials-main-title {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка отзывов */
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 700;
@@ -489,7 +447,6 @@ button {
 }
 
 .testimonial-quote-icon {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для иконки кавычки */
   font-family: 'Roboto', sans-serif;
   font-size: 4rem;
   color: rgba(255, 162, 0, 0.15);
@@ -524,7 +481,6 @@ button {
 }
 
 .user-name {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для имени пользователя */
   font-family: 'Roboto', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
@@ -535,16 +491,12 @@ button {
   color: var(--text-muted);
 }
 
-/* ==========================================================================
-   8. ПРАВАЯ КОЛОНКА (SIDEBAR): ЧАСЫ И АНОНСЫ
-   ========================================================================== */
 .sidebar-content {
   display: flex;
   flex-direction: column;
   gap: 35px;
 }
 
-/* Виджет рабочих часов (Строго 112x112px по ТЗ) */
 .clock-widget {
   width: 112px;
   height: 112px;
@@ -559,7 +511,6 @@ button {
 }
 
 .clock-time {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для времени на часах */
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
@@ -567,9 +518,7 @@ button {
   letter-spacing: 1px;
 }
 
-/* Блок мероприятий */
 .events-main-title {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка мероприятий */
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
@@ -598,7 +547,6 @@ button {
 }
 
 .event-month {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для месяца */
   font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -606,7 +554,6 @@ button {
 }
 
 .event-day {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для дня */
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
@@ -614,7 +561,6 @@ button {
 }
 
 .event-tag {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для тега мероприятия */
   font-family: 'Roboto', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -623,7 +569,6 @@ button {
 }
 
 .event-title {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для названия мероприятия */
   font-family: 'Roboto', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
@@ -648,7 +593,6 @@ button {
   text-align: center;
   background-color: var(--retro-blue);
   color: var(--bg-pure);
-  /* ШРИФТ ИЗМЕНЕН: Roboto для кнопки регистрации */
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
@@ -661,9 +605,6 @@ button {
   color: #000000;
 }
 
-/* ==========================================================================
-   9. ПОДВАЛ САЙТА (FOOTER)
-   ========================================================================== */
 .app-footer {
   background-color: var(--retro-blue);
   color: var(--bg-light);
@@ -682,7 +623,6 @@ button {
 }
 
 .app-footer h4 {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовков в футере */
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   margin-bottom: 15px;
@@ -714,9 +654,6 @@ button {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ==========================================================================
-   ADDED. СТИЛИ ДЛЯ ВЫЕЗЖАЮЩЕГО МЕНЮ (MOBILE DRAWER)
-   ========================================================================== */
 .drawer-backdrop {
   position: fixed;
   top: 0;
@@ -763,7 +700,6 @@ button {
 }
 
 .drawer-title-text {
-  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка drawer */
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: var(--text-dark);
@@ -781,7 +717,6 @@ button {
 .drawer-nav a {
   display: block;
   padding: 15px 20px;
-  /* ШРИФТ ИЗМЕНЕН: Roboto для ссылок в drawer */
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: var(--text-dark);
@@ -798,18 +733,14 @@ button {
   font-weight: 700;
 }
 
-/* ==========================================================================
-   10. АДАПТИВНОСТЬ И МЕДИА-ЗАПРОСЫ (БРЕЙКПОИНТЫ)
-   ========================================================================== */
-/* Адаптация под планшеты */
 @media screen and (max-width: 992px) {
   .wrapper-content {
-    grid-template-columns: 1fr; /* Переводим двухколоночный грид в одну ленту */
+    grid-template-columns: 1fr;
     gap: 30px;
   }
 
   .sidebar-content {
-    flex-direction: column-reverse; /* Мероприятия вверх, часы вниз */
+    flex-direction: column-reverse;
   }
 
   .mission-container {
@@ -822,9 +753,7 @@ button {
   }
 }
 
-/* Адаптация под мобильные телефоны */
 @media screen and (max-width: 768px) {
-  /* СКРЫВАЕМ ДЕСКТОПНЫЕ ССЫЛКИ И ПОКАЗЫВАЕМ ГАМБУРГЕР */
   .app-bar-links {
     display: none;
   }
@@ -938,9 +867,6 @@ button {
   }
 }
 
-/* ==========================================================================
-         ADDED. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ НОВОСТЕЙ (NEWS FEED)
-         ========================================================================== */
 .news-main-title {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
@@ -974,7 +900,6 @@ button {
   transform: translateY(-2px);
 }
 
-/* Изменение цвета бордера для важных объявлений */
 .news-card.alert-news {
   border-top-color: var(--rust);
 }
@@ -1094,7 +1019,6 @@ button {
   margin-bottom: 20px;
 }
 
-/* Сетка стратегических столпов */
 .mission-pillars {
   display: flex;
   flex-direction: column;
@@ -1296,7 +1220,6 @@ button {
   margin-bottom: 15px;
 }
 
-/* Стили таблицы классификации отходов */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -1360,7 +1283,6 @@ button {
   color: var(--bg-pure);
 }
 
-/* Пошаговый список */
 .step-list {
   list-style: none;
   padding: 0;
@@ -1433,7 +1355,6 @@ button {
   border-bottom: 2px solid var(--bg-element);
 }
 
-/* Стили формы тикетов */
 .ticket-container {
   background-color: var(--bg-light);
   border-top: 4px solid var(--rust);
@@ -1513,7 +1434,6 @@ textarea.form-control {
   color: #000000;
 }
 
-/* Стили секции FAQ */
 .faq-section {
   margin-bottom: 40px;
 }
@@ -1585,7 +1505,6 @@ textarea.form-control {
   border-bottom: 2px solid var(--bg-element);
 }
 
-/* Блок информации о контактах */
 .contact-info-panel {
   background-color: var(--bg-light);
   border-left: 6px solid var(--golden-yellow);
@@ -1616,7 +1535,6 @@ textarea.form-control {
   line-height: 1.4;
 }
 
-/* Форма обратной связи */
 .contact-form-container {
   background-color: var(--bg-light);
   border-top: 4px solid var(--retro-blue);
@@ -1750,7 +1668,6 @@ textarea.form-control {
   margin-bottom: 15px;
 }
 
-/* Коммерческие сервисные карточки */
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1781,7 +1698,6 @@ textarea.form-control {
   margin: 0;
 }
 
-/* Стили таблицы коммерческих тарифов */
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -1838,18 +1754,17 @@ textarea.form-control {
     font-size: 1.6rem;
   }
   .business-table {
-    table-layout: fixed; /* Фиксируем ширину, чтобы колонки не распирали экран */
+    table-layout: fixed;
     width: 100%;
   }
   .business-table th,
   .business-table td {
-    padding: 10px 8px; /* Уменьшаем отступы, освобождая место */
-    font-size: 0.85rem; /* Слегка уменьшаем шрифт для компактности */
-    word-wrap: break-word; /* Разрешаем перенос длинных слов */
-    white-space: normal; /* Сбрасываем запрет на перенос строк */
+    padding: 10px 8px;
+    font-size: 0.85rem;
+    word-wrap: break-word;
+    white-space: normal;
   }
 
-  /* Опционально: задаем примерное распределение ширины колонок на мобилках */
   .business-table th:nth-child(1) {
     width: 30%;
   }
