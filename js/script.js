@@ -11,6 +11,27 @@ function startClock() {
 }
 document.addEventListener('DOMContentLoaded', startClock)
 
-// document.querySelectorAll('a').forEach(el => {
-//   el.onclick = e => e.stopPropagation()
-// })
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn = document.getElementById('drawer-open')
+  const closeBtn = document.getElementById('drawer-close')
+  const drawer = document.getElementById('mobile-drawer')
+  const backdrop = document.getElementById('drawer-backdrop')
+
+  const toggleDrawer = isOpened => {
+    if (isOpened) {
+      drawer.classList.add('is-active')
+      backdrop.classList.add('is-active')
+      document.body.style.overflow = 'hidden' // Запрет прокрутки сайта под меню
+    } else {
+      drawer.classList.remove('is-active')
+      backdrop.classList.remove('is-active')
+      document.body.style.overflow = ''
+    }
+  }
+
+  if (openBtn && closeBtn && drawer && backdrop) {
+    openBtn.addEventListener('click', () => toggleDrawer(true))
+    closeBtn.addEventListener('click', () => toggleDrawer(false))
+    backdrop.addEventListener('click', () => toggleDrawer(false))
+  }
+})
