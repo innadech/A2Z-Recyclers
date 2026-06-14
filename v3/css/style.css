@@ -32,8 +32,8 @@ html,
 body {
   background-color: var(--bg-pure);
   color: var(--text-dark);
-  /* Шрифт объявлен один раз глобально, все блоки его наследуют */
-  font-family: 'Roboto', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Основной текст теперь Montserrat */
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -51,7 +51,8 @@ input,
 button,
 select,
 textarea {
-  font-family: 'Roboto', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Montserrat для элементов форм */
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: var(--text-dark);
   outline: none;
@@ -143,7 +144,8 @@ button {
 }
 
 .app-bar-links a {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для ссылок в шапке */
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   color: var(--text-dark);
@@ -194,7 +196,8 @@ button {
   flex: 1;
   text-align: center;
   padding: 15px 20px;
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для табов */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--text-dark);
@@ -243,7 +246,8 @@ button {
 }
 
 .hero-banner h1 {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для главного заголовка */
+  font-family: 'Roboto', sans-serif;
   font-size: 3.5rem;
   font-weight: 800;
   color: var(--bg-pure);
@@ -337,7 +341,8 @@ button {
 }
 
 .mission-title {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка миссии */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--retro-blue);
@@ -350,7 +355,8 @@ button {
 
 .mission-btn {
   display: inline-block;
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для кнопки миссии */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
   color: var(--bg-pure);
@@ -369,7 +375,8 @@ button {
 }
 
 .projects-main-title {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка секции проектов */
+  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--rust);
@@ -422,7 +429,8 @@ button {
 .project-badge {
   display: inline-block;
   align-self: flex-start;
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для бейджа проекта */
+  font-family: 'Roboto', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -433,7 +441,8 @@ button {
 }
 
 .project-title {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для названия проекта */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -451,7 +460,8 @@ button {
 }
 
 .testimonials-main-title {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка отзывов */
+  font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--retro-blue);
@@ -479,7 +489,8 @@ button {
 }
 
 .testimonial-quote-icon {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для иконки кавычки */
+  font-family: 'Roboto', sans-serif;
   font-size: 4rem;
   color: rgba(255, 162, 0, 0.15);
   position: absolute;
@@ -513,7 +524,8 @@ button {
 }
 
 .user-name {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для имени пользователя */
+  font-family: 'Roboto', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
 }
@@ -547,7 +559,8 @@ button {
 }
 
 .clock-time {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для времени на часах */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--rust);
@@ -556,7 +569,8 @@ button {
 
 /* Блок мероприятий */
 .events-main-title {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка мероприятий */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--rust);
@@ -584,21 +598,24 @@ button {
 }
 
 .event-month {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для месяца */
+  font-family: 'Roboto', sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .event-day {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для дня */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1;
 }
 
 .event-tag {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для тега мероприятия */
+  font-family: 'Roboto', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--retro-blue);
@@ -606,7 +623,8 @@ button {
 }
 
 .event-title {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для названия мероприятия */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 5px 0;
@@ -630,7 +648,8 @@ button {
   text-align: center;
   background-color: var(--retro-blue);
   color: var(--bg-pure);
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для кнопки регистрации */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 10px;
@@ -663,7 +682,8 @@ button {
 }
 
 .app-footer h4 {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовков в футере */
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   margin-bottom: 15px;
   color: var(--golden-yellow);
@@ -743,7 +763,8 @@ button {
 }
 
 .drawer-title-text {
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для заголовка drawer */
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -760,7 +781,8 @@ button {
 .drawer-nav a {
   display: block;
   padding: 15px 20px;
-  font-family: 'Montserrat', sans-serif;
+  /* ШРИФТ ИЗМЕНЕН: Roboto для ссылок в drawer */
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: var(--text-dark);
   border-bottom: 1px solid var(--bg-light);
@@ -810,10 +832,6 @@ button {
   .drawer-open-btn {
     display: flex;
   }
-
-  /* .app-bar-search form {
-    width: 180px;
-  } */
 
   .tabs-container {
     flex-direction: column;
