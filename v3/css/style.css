@@ -2,15 +2,17 @@
 @import url(https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css);
 
 :root {
-  --clr-11: #1a1b1c;
-  --clr-22: #212223;
-  --clr-33: #2a2b2c;
-  --clr-44: #3a3b3c;
-  --clr-55: #414243;
+  /* Фоны */
+  --clr-11: #ffffff;
+  --clr-22: #f4f5f6;
+  --clr-33: #eaebec;
+  --clr-44: #d0d1d2;
+  --clr-55: #bebfc0;
   --clr-66: #777777;
 
-  --clr-99: #eaebec;
-  --clr-88: #ffffff;
+  --clr-00: #2a2b2c;
+  --clr-99: #1a1b1c;
+  --clr-88: #000000;
 
   --clr-red: #7b2e0f;
   --clr-blue: #0156a3;
@@ -210,11 +212,18 @@ footer ul {
 footer {
   text-align: center;
   padding: 25px;
+  color: var(--clr-22);
   /* position: absolute; */
   /* bottom: 0;
   left: 0;
   right: 0; */
-  background: var(--clr-33);
+  background: var(--clr-blue);
+  a {
+    color: var(--clr-22);
+  }
+  a:hover {
+    color: var(--clr-11);
+  }
 }
 footer > div {
   display: flex;
@@ -262,7 +271,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--clr-99);
+  color: var(--clr-22);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -275,7 +284,7 @@ footer > div {
 .hero-banner p {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
-  color: #f4f4f4;
+  color: var(--clr-22);
   font-weight: 300;
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
 
@@ -369,7 +378,7 @@ footer > div {
 
 .mission-container {
   display: flex;
-  background-color: var(--clr-99);
+  background-color: var(--clr-33);
   /* border: 1px solid #e0e0e0; */
   border-left: 8px solid var(--clr-blue); /* Перенесли акцентную линию в рамку контейнера */
   border-radius: 8px;
@@ -416,7 +425,7 @@ footer > div {
 .mission-text {
   font-family: 'Roboto', sans-serif;
   font-size: 1.05rem;
-  color: var(--clr-55);
+  color: var(--clr-99);
   margin: 0;
 }
 
@@ -425,7 +434,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--clr-99);
+  color: var(--clr-22);
   background-color: var(--clr-blue);
   padding: 12px 24px;
   border-radius: 4px;
@@ -492,7 +501,7 @@ footer > div {
 
 /* Карточка отдельного проекта */
 .project-card {
-  background-color: var(--clr-99);
+  background-color: var(--clr-33);
   /* border: 1px solid #e0e0e0; */
   border-radius: 8px;
   overflow: hidden;
@@ -550,14 +559,14 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--clr-11);
+  color: var(--clr-99);
   margin: 0;
 }
 
 /* Описание проекта */
 .project-description {
   font-size: 0.95rem;
-  color: var(--clr-55);
+  color: var(--clr-99);
   margin: 0;
 }
 
@@ -610,7 +619,7 @@ footer > div {
 
 /* Карточка отзыва */
 .testimonial-card {
-  background-color: #ffffff;
+  background-color: var(--clr-33);
   /* border: 1px solid #e0e0e0; */
   border-top: 4px solid var(--clr-yellow); /* Золотой акцент сверху */
   border-radius: 8px;
@@ -636,7 +645,7 @@ footer > div {
 /* Текст самого отзыва */
 .testimonial-text {
   font-size: 1rem;
-  color: var(--clr-55);
+  color: var(--clr-00);
   font-style: italic;
   margin-bottom: 20px;
   /* z-index: 1; */
@@ -669,7 +678,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--clr-22);
+  color: var(--clr-99);
   margin: 0;
 }
 
@@ -720,7 +729,7 @@ footer > div {
 
 /* Карточка события (Флексбокс-строка на десктопе) */
 .event-card {
-  background-color: #ffffff;
+  background-color: var(--clr-33);
   /* border: 1px solid #e0e0e0; */
   border-radius: 8px;
   padding: 25px;
@@ -741,7 +750,7 @@ footer > div {
 /* Календарная плашка (Использует фирменный ржавый цвет) */
 .event-date-badge {
   background-color: var(--clr-red);
-  color: #ffffff;
+  color: var(--clr-11);
   width: 80px;
   height: 80px;
   border-radius: 8px;
@@ -789,7 +798,7 @@ footer > div {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--clr-22);
+  color: var(--clr-99);
   margin: 0;
 }
 
@@ -803,7 +812,7 @@ footer > div {
 /* Описание */
 .event-description {
   font-size: 0.95rem;
-  color: var(--clr-55);
+  color: var(--clr-88);
   margin: 0;
 }
 
