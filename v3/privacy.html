@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2Z Recyclers - Privacy Framework</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* ==========================================================================
+         ADDED. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ PRIVACY FRAMEWORK
+         ========================================================================== */
+      .privacy-container {
+        background-color: var(--bg-light);
+        border-left: 8px solid var(--retro-blue);
+        border-radius: 8px;
+        padding: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+      }
+
+      .privacy-main-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--retro-blue);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--bg-element);
+      }
+
+      .privacy-section {
+        margin-bottom: 30px;
+      }
+
+      .privacy-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .privacy-subtitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--rust);
+        margin-bottom: 12px;
+      }
+
+      .privacy-text {
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+
+      .privacy-list {
+        list-style-type: square;
+        margin-left: 25px;
+        margin-bottom: 15px;
+      }
+
+      .privacy-list li {
+        font-size: 1rem;
+        color: var(--text-dark);
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+
+      @media screen and (max-width: 768px) {
+        .privacy-container {
+          padding: 25px 20px;
+        }
+        .privacy-main-title {
+          font-size: 1.6rem;
+        }
+        .privacy-subtitle {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="app-bar">
+        <div class="app-bar-container">
+          <button
+            type="button"
+            class="drawer-open-btn"
+            id="drawer-open"
+            aria-label="Open menu"
+          >
+            <span class="mdi mdi-menu" aria-hidden="true"></span>
+          </button>
+
+          <div class="app-bar-title">
+            <a href="index.html">
+              <img src="./img/logo.png" alt="A2Z Recyclers Corporate Logo" />
+            </a>
+          </div>
+
+          <div class="app-bar-search">
+            <form action="#" method="get" role="search">
+              <input
+                type="search"
+                placeholder="Search site..."
+                aria-label="Search through site content"
+              />
+              <button type="submit" aria-label="Submit search">
+                <span class="mdi mdi-magnify" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+
+          <nav class="app-bar-links">
+            <ul>
+              <li><a href="./mission.html">Our mission</a></li>
+              <li><a href="./about.html">About us</a></li>
+              <li><a href="./news.html">News</a></li>
+              <li><a href="./contact.html">Contacts</a></li>
+              <li><a href="./login.html" class="login-link">Login</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <nav class="app-tabs">
+        <div class="tabs-container">
+          <a href="./household.html" class="tab-household">Household Guide</a>
+          <a href="./business.html" class="tab-business">Business Solutions</a>
+        </div>
+      </nav>
+
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>A2Z Recyclers</h1>
+          <p>Privacy Framework & Corporate Transparency</p>
+        </div>
+      </section>
+
+      <div class="wrapper-content">
+        <main class="main-content">
+          <article class="privacy-container">
+            <h2 class="privacy-main-title">Privacy Policy & Data Protection</h2>
+
+            <section class="privacy-section">
+              <p class="privacy-text">
+                At A2Z Recyclers, operated under Gelos Enterprise, we are
+                committed to safeguarding the operational data, profile metrics,
+                and material traffic records shared by our community members and
+                industrial partners. This privacy framework explains how we
+                trace, store, and process your information.
+              </p>
+            </section>
+
+            <section class="privacy-section">
+              <h3 class="privacy-subtitle">1. Information We Collect</h3>
+              <p class="privacy-text">
+                To generate accurate sorting metrics and support live logistics
+                scheduling, we analyze specific data profiles through our secure
+                system nodes:
+              </p>
+              <ul class="privacy-list">
+                <li>
+                  <strong>Identity Data:</strong> Names, corporate affiliations,
+                  and email communication logs handled via the login portal.
+                </li>
+                <li>
+                  <strong>Logistics Data:</strong> Domestic and commercial waste
+                  volume history, active tracking records, and scheduled pickup
+                  timestamps.
+                </li>
+                <li>
+                  <strong>Technical Profile Logs:</strong> Network timestamps,
+                  search queries within our asset library, and session
+                  properties.
+                </li>
+              </ul>
+            </section>
+
+            <section class="privacy-section">
+              <h3 class="privacy-subtitle">2. How Data is Utilized</h3>
+              <p class="privacy-text">
+                Collected material flows are stripped of direct personal markers
+                wherever possible to maintain security. The records directly
+                assist our field operators in optimizing local waste loops,
+                refining municipal guidelines for communities like Pennant
+                Hills, and compiling statistical insights for environmental
+                audits.
+              </p>
+            </section>
+
+            <section class="privacy-section">
+              <h3 class="privacy-subtitle">
+                3. Information Storage and Security
+              </h3>
+              <p class="privacy-text">
+                All records compiled by our secure nodes are protected using
+                encryption layers preventing unauthorized external traffic
+                access. Data is retained only as long as necessary to comply
+                with Australian industrial standards and Gelos Enterprise
+                accountability bylaws.
+              </p>
+            </section>
+          </article>
+        </main>
+
+        <aside class="sidebar-content">
+          <div class="clock-widget" aria-label="Current live time">
+            <div class="clock-time" id="live-clock">00:00</div>
+          </div>
+
+          <section class="events-section">
+            <h2 class="events-main-title">Upcoming Events</h2>
+            <div class="event-card">
+              <div class="event-date-badge">
+                <span class="event-month">Jul</span>
+                <span class="event-day">18</span>
+              </div>
+              <div class="event-info">
+                <span class="event-tag">Community Workshop</span>
+                <h3 class="event-title">Household Recycling Seminar</h3>
+                <p class="event-details">
+                  <strong>Location:</strong> Pennant Hills Community Centre
+                </p>
+                <p class="event-description">
+                  Learn practical methods to minimize your domestic trash
+                  footprint, master home plastic sorting guidelines.
+                </p>
+              </div>
+              <div class="event-action">
+                <a href="./contact.html" class="event-reg-btn">Register</a>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div class="footer-contacts">
+            <h4>Live Support Hotlines</h4>
+            <ul>
+              <li>Phone: <strong>8-800-555-35-35</strong></li>
+              <li>Email: <strong>support@a2z-recyclers.org.au</strong></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="./privacy.html">Privacy Framework</a></li>
+              <li><a href="./helpdesk.html">Helpdesk Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >&copy; 2026 A2Z Recyclers. All rights reserved. Managed under Gelos
+            Enterprise.</span
+          >
+        </div>
+      </footer>
+
+      <div class="drawer-backdrop" id="drawer-backdrop"></div>
+      <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+          <span class="drawer-title-text">Menu</span>
+          <button
+            type="button"
+            class="drawer-close-btn"
+            id="drawer-close"
+            aria-label="Close menu"
+          >
+            <span class="mdi mdi-close" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <ul>
+            <li><a href="./mission.html">Our mission</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./contact.html">Contacts</a></li>
+            <li><a href="./login.html" class="drawer-login-link">Login</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('drawer-open')
+        const closeBtn = document.getElementById('drawer-close')
+        const drawer = document.getElementById('mobile-drawer')
+        const backdrop = document.getElementById('drawer-backdrop')
+
+        const toggleDrawer = isOpened => {
+          if (isOpened) {
+            drawer.classList.add('is-active')
+            backdrop.classList.add('is-active')
+            document.body.style.overflow = 'hidden'
+          } else {
+            drawer.classList.remove('is-active')
+            backdrop.classList.remove('is-active')
+            document.body.style.overflow = ''
+          }
+        }
+
+        if (openBtn && closeBtn && drawer && backdrop) {
+          openBtn.addEventListener('click', () => toggleDrawer(true))
+          closeBtn.addEventListener('click', () => toggleDrawer(false))
+          backdrop.addEventListener('click', () => toggleDrawer(false))
+        }
+      })
+    </script>
+  </body>
+</html>
