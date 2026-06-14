@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2Z Recyclers - About Us</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* ==========================================================================
+         ADDED. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ О КОМПАНИИ (ABOUT US)
+         ========================================================================== */
+      .about-main-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--retro-blue);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--bg-element);
+      }
+
+      .about-container {
+        background-color: var(--bg-light);
+        border-radius: 8px;
+        padding: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+      }
+
+      .about-section {
+        margin-bottom: 30px;
+      }
+
+      .about-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .about-subtitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--rust);
+        margin-bottom: 12px;
+      }
+
+      .about-text {
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .about-highlight-box {
+        background-color: var(--bg-pure);
+        border-left: 4px solid var(--golden-yellow);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 6px 6px 0;
+      }
+
+      .about-highlight-box p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      @media screen and (max-width: 768px) {
+        .about-container {
+          padding: 25px 20px;
+        }
+        .about-main-title {
+          font-size: 1.6rem;
+        }
+        .about-subtitle {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ШАПКА САЙТА -->
+      <header class="app-bar">
+        <div class="app-bar-container">
+          <button
+            type="button"
+            class="drawer-open-btn"
+            id="drawer-open"
+            aria-label="Open menu"
+          >
+            <span class="mdi mdi-menu" aria-hidden="true"></span>
+          </button>
+
+          <div class="app-bar-title">
+            <a href="index.html">
+              <img src="./img/logo.png" alt="A2Z Recyclers Corporate Logo" />
+            </a>
+          </div>
+
+          <div class="app-bar-search">
+            <form action="#" method="get" role="search">
+              <input
+                type="search"
+                placeholder="Search site..."
+                aria-label="Search through site content"
+              />
+              <button type="submit" aria-label="Submit search">
+                <span class="mdi mdi-magnify" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+
+          <nav class="app-bar-links">
+            <ul>
+              <li><a href="./mission.html">Our mission</a></li>
+              <li><a href="./about.html">About us</a></li>
+              <li><a href="./news.html">News</a></li>
+              <li><a href="./contact.html">Contacts</a></li>
+              <li><a href="./login.html" class="login-link">Login</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ИЗОЛИРОВАННЫЕ ВКЛАДКИ -->
+      <nav class="app-tabs">
+        <div class="tabs-container">
+          <a href="./household.html" class="tab-household">Household Guide</a>
+          <a href="./business.html" class="tab-business">Business Solutions</a>
+        </div>
+      </nav>
+
+      <!-- ГЛАВНЫЙ АНИМИРОВАННЫЙ БАННЕР -->
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>A2Z Recyclers</h1>
+          <p>Our History, Infrastructure & Corporate Structure</p>
+        </div>
+      </section>
+
+      <!-- СЕТКА ОСНОВНОГО КОНТЕНТА -->
+      <div class="wrapper-content">
+        <!-- ЛЕВАЯ КОЛОНКА (Информация о компании) -->
+        <main class="main-content">
+          <div class="about-container">
+            <h2 class="about-main-title">About Our Organization</h2>
+
+            <section class="about-section">
+              <p class="about-text">
+                A2Z Recyclers is a leading provider of comprehensive waste
+                minimization frameworks, material sorting systems, and automated
+                logistical routing. Operating under the strategic oversight of
+                <strong>Gelos Enterprise</strong>, we deliver scalable
+                ecological solutions for both domestic environments and complex
+                industrial facilities across the region.
+              </p>
+            </section>
+
+            <section class="about-section">
+              <h3 class="about-subtitle">Corporate Foundation & Structure</h3>
+              <p class="about-text">
+                Established with transparency and structural accountability at
+                its core, our organization functions through a decentralized
+                network of automated collection nodes and drop-off hubs. By
+                integrating modern system tracking with real-time operational
+                parameters, we bridge the gap between municipal household
+                demands and corporate industrial recycling streams.
+              </p>
+              <div class="about-highlight-box">
+                <p>
+                  Every material lifecycle trace, logistics schedule
+                  optimization, and localized sorting guideline is rigorously
+                  evaluated to comply with current Australian environmental
+                  standards.
+                </p>
+              </div>
+            </section>
+
+            <section class="about-section">
+              <h3 class="about-subtitle">Technological Integrity</h3>
+              <p class="about-text">
+                We believe that reliable ecological recovery requires robust
+                infrastructure. Our data profiles and dynamic portal
+                architectures allow community segments, including our core
+                districts like Pennant Hills, to monitor volume capacities,
+                access instant support desks, and coordinate bulk asset
+                distribution without administrative bottlenecks.
+              </p>
+            </section>
+          </div>
+        </main>
+
+        <!-- ПРАВАЯ КОЛОНКА (SIDEBAR) -->
+        <aside class="sidebar-content">
+          <div class="clock-widget" aria-label="Current live time">
+            <div class="clock-time" id="live-clock">00:00</div>
+          </div>
+
+          <section class="events-section">
+            <h2 class="events-main-title">Upcoming Events</h2>
+            <div class="event-card">
+              <div class="event-date-badge">
+                <span class="event-month">Jul</span>
+                <span class="event-day">18</span>
+              </div>
+              <div class="event-info">
+                <span class="event-tag">Community Workshop</span>
+                <h3 class="event-title">Household Recycling Seminar</h3>
+                <p class="event-details">
+                  <strong>Location:</strong> Pennant Hills Community Centre
+                </p>
+                <p class="event-description">
+                  Learn practical methods to minimize your domestic trash
+                  footprint, master home plastic sorting guidelines.
+                </p>
+              </div>
+              <div class="event-action">
+                <a href="./contact.html" class="event-reg-btn">Register</a>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- ПОДВАЛ САЙТА -->
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div class="footer-contacts">
+            <h4>Live Support Hotlines</h4>
+            <ul>
+              <li>Phone: <strong>8-800-555-35-35</strong></li>
+              <li>Email: <strong>support@a2z-recyclers.org.au</strong></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="./privacy.html">Privacy Framework</a></li>
+              <li><a href="./helpdesk.html">Helpdesk Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >&copy; 2026 A2Z Recyclers. All rights reserved. Managed under Gelos
+            Enterprise.</span
+          >
+        </div>
+      </footer>
+
+      <!-- ВЫЕЗЖАЮЩЕЕ МЕНЮ (MOBILE DRAWER) -->
+      <div class="drawer-backdrop" id="drawer-backdrop"></div>
+      <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+          <span class="drawer-title-text">Menu</span>
+          <button
+            type="button"
+            class="drawer-close-btn"
+            id="drawer-close"
+            aria-label="Close menu"
+          >
+            <span class="mdi mdi-close" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <ul>
+            <li><a href="./mission.html">Our mission</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./contact.html">Contacts</a></li>
+            <li><a href="./login.html" class="drawer-login-link">Login</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- СКРИПТЫ ДЛЯ DRAWER -->
+    <script src="./js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('drawer-open')
+        const closeBtn = document.getElementById('drawer-close')
+        const drawer = document.getElementById('mobile-drawer')
+        const backdrop = document.getElementById('drawer-backdrop')
+
+        const toggleDrawer = isOpened => {
+          if (isOpened) {
+            drawer.classList.add('is-active')
+            backdrop.classList.add('is-active')
+            document.body.style.overflow = 'hidden'
+          } else {
+            drawer.classList.remove('is-active')
+            backdrop.classList.remove('is-active')
+            document.body.style.overflow = ''
+          }
+        }
+
+        if (openBtn && closeBtn && drawer && backdrop) {
+          openBtn.addEventListener('click', () => toggleDrawer(true))
+          closeBtn.addEventListener('click', () => toggleDrawer(false))
+          backdrop.addEventListener('click', () => toggleDrawer(false))
+        }
+      })
+    </script>
+  </body>
+</html>
