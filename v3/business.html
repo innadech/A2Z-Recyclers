@@ -130,6 +130,31 @@
         .business-main-title {
           font-size: 1.6rem;
         }
+        .business-table {
+          table-layout: fixed; /* Фиксируем ширину, чтобы колонки не распирали экран */
+          width: 100%;
+        }
+        .business-table th,
+        .business-table td {
+          padding: 10px 8px; /* Уменьшаем отступы, освобождая место */
+          font-size: 0.85rem; /* Слегка уменьшаем шрифт для компактности */
+          word-wrap: break-word; /* Разрешаем перенос длинных слов */
+          white-space: normal; /* Сбрасываем запрет на перенос строк */
+        }
+
+        /* Опционально: задаем примерное распределение ширины колонок на мобилках */
+        .business-table th:nth-child(1) {
+          width: 30%;
+        }
+        .business-table th:nth-child(2) {
+          width: 25%;
+        }
+        .business-table th:nth-child(3) {
+          width: 25%;
+        }
+        .business-table th:nth-child(4) {
+          width: 20%;
+        }
       }
     </style>
   </head>
