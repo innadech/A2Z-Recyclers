@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2Z Recyclers - Household Guide</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <style>
+      /* ==========================================================================
+         ADDED. ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ HOUSEHOLD GUIDE
+         ========================================================================== */
+      .guide-main-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--retro-blue);
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--bg-element);
+      }
+
+      .guide-container {
+        background-color: var(--bg-light);
+        border-radius: 8px;
+        padding: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+      }
+
+      .guide-text {
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .guide-subtitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--rust);
+        margin-top: 30px;
+        margin-bottom: 15px;
+      }
+
+      /* Стили таблицы классификации отходов */
+      .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        margin-bottom: 30px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+      }
+
+      .recycling-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: var(--bg-pure);
+        text-align: left;
+        font-size: 0.95rem;
+      }
+
+      .recycling-table th {
+        background-color: var(--retro-blue);
+        color: var(--bg-pure);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        padding: 12px 16px;
+      }
+
+      .recycling-table td {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-dark);
+        line-height: 1.4;
+      }
+
+      .recycling-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .recycling-table tr:nth-child(even) {
+        background-color: var(--bg-light);
+      }
+
+      .bin-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .bin-yellow {
+        background-color: var(--golden-yellow);
+        color: #000000;
+      }
+      .bin-blue {
+        background-color: var(--retro-blue);
+        color: var(--bg-pure);
+      }
+      .bin-red {
+        background-color: var(--rust);
+        color: var(--bg-pure);
+      }
+
+      /* Пошаговый список */
+      .step-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .step-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        background-color: var(--bg-pure);
+        padding: 15px 20px;
+        border-radius: 6px;
+        border-left: 4px solid var(--retro-blue);
+      }
+
+      .step-number {
+        background-color: var(--bg-element);
+        color: var(--text-dark);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+        min-width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .step-content h4 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 0 0 4px 0;
+        color: var(--text-dark);
+      }
+
+      .step-content p {
+        font-size: 0.9rem;
+        color: var(--text-dark);
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      @media screen and (max-width: 768px) {
+        .guide-container {
+          padding: 25px 20px;
+        }
+        .guide-main-title {
+          font-size: 1.6rem;
+        }
+        .recycling-table th,
+        .recycling-table td {
+          padding: 10px 12px;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- ШАПКА САЙТА -->
+      <header class="app-bar">
+        <div class="app-bar-container">
+          <button
+            type="button"
+            class="drawer-open-btn"
+            id="drawer-open"
+            aria-label="Open menu"
+          >
+            <span class="mdi mdi-menu" aria-hidden="true"></span>
+          </button>
+
+          <div class="app-bar-title">
+            <a href="index.html">
+              <img src="./img/logo.png" alt="A2Z Recyclers Corporate Logo" />
+            </a>
+          </div>
+
+          <div class="app-bar-search">
+            <form action="#" method="get" role="search">
+              <input
+                type="search"
+                placeholder="Search site..."
+                aria-label="Search through site content"
+              />
+              <button type="submit" aria-label="Submit search">
+                <span class="mdi mdi-magnify" aria-hidden="true"></span>
+              </button>
+            </form>
+          </div>
+
+          <nav class="app-bar-links">
+            <ul>
+              <li><a href="./mission.html">Our mission</a></li>
+              <li><a href="./about.html">About us</a></li>
+              <li><a href="./news.html">News</a></li>
+              <li><a href="./contact.html">Contacts</a></li>
+              <li><a href="./login.html" class="login-link">Login</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ИЗОЛИРОВАННЫЕ ВКЛАДКИ -->
+      <nav class="app-tabs">
+        <div class="tabs-container">
+          <a href="./household.html" class="tab-household active"
+            >Household Guide</a
+          >
+          <a href="./business.html" class="tab-business">Business Solutions</a>
+        </div>
+      </nav>
+
+      <!-- ГЛАВНЫЙ АНИМИРОВАННЫЙ БАННЕР -->
+      <section class="hero-banner">
+        <div class="hero-content">
+          <h1>A2Z Recyclers</h1>
+          <p>Household Recycling Framework & Sorting Guidelines</p>
+        </div>
+      </section>
+
+      <!-- СЕТКА ОСНОВНОГО КОНТЕНТА -->
+      <div class="wrapper-content">
+        <!-- ЛЕВАЯ КОЛОНКА (Руководство для жителей) -->
+        <main class="main-content">
+          <div class="guide-container">
+            <h2 class="guide-main-title">Domestic Recycling Guide</h2>
+            <p class="guide-text">
+              Managing residential material streams requires clear sorting
+              methods. This community framework provides explicit classification
+              properties for household trash to minimize processing errors at
+              local collection hubs like Pennant Hills.
+            </p>
+
+            <h3 class="guide-subtitle">Material Classification Matrix</h3>
+            <div class="table-responsive">
+              <table class="recycling-table">
+                <thead>
+                  <tr>
+                    <th>Material Category</th>
+                    <th>Examples / Context</th>
+                    <th>Target Node</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Rigid Plastics</strong></td>
+                    <td>Milk bottles, shampoo containers, clean PET flasks</td>
+                    <td>
+                      <span class="bin-badge bin-yellow">Yellow Bin</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Paper & Cardboard</strong></td>
+                    <td>Unflattened boxes, logistics packaging, newspapers</td>
+                    <td><span class="bin-badge bin-blue">Blue Bin</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Residual General Waste</strong></td>
+                    <td>
+                      Contaminated food wrapping, broken ceramics, soft film
+                    </td>
+                    <td><span class="bin-badge bin-red">Red Bin</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="guide-subtitle">Three-Step Domestic Routine</h3>
+            <ul class="step-list">
+              <li class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Rinse and Purge</h4>
+                  <p>
+                    Ensure all rigid food containers are completely free from
+                    biological residues before isolation.
+                  </p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Flatten and Compress</h4>
+                  <p>
+                    Crush large cardboard panels and boxes to maximize volume
+                    capacity within local drop-off slots.
+                  </p>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Segregate Streams</h4>
+                  <p>
+                    Never mix soft plastics or plastic bags into the standard
+                    automated yellow container loop.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </main>
+
+        <!-- ПРАВАЯ КОЛОНКА (SIDEBAR) -->
+        <aside class="sidebar-content">
+          <div class="clock-widget" aria-label="Current live time">
+            <div class="clock-time" id="live-clock">00:00</div>
+          </div>
+
+          <section class="events-section">
+            <h2 class="events-main-title">Upcoming Events</h2>
+            <div class="event-card">
+              <div class="event-date-badge">
+                <span class="event-month">Jul</span>
+                <span class="event-day">18</span>
+              </div>
+              <div class="event-info">
+                <span class="event-tag">Community Workshop</span>
+                <h3 class="event-title">Household Recycling Seminar</h3>
+                <p class="event-details">
+                  <strong>Location:</strong> Pennant Hills Community Centre
+                </p>
+                <p class="event-description">
+                  Learn practical methods to minimize your domestic trash
+                  footprint, master home plastic sorting guidelines.
+                </p>
+              </div>
+              <div class="event-action">
+                <a href="./contact.html" class="event-reg-btn">Register</a>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- ПОДВАЛ САЙТА -->
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div class="footer-contacts">
+            <h4>Live Support Hotlines</h4>
+            <ul>
+              <li>Phone: <strong>8-800-555-35-35</strong></li>
+              <li>Email: <strong>support@a2z-recyclers.org.au</strong></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="./privacy.html">Privacy Framework</a></li>
+              <li><a href="./helpdesk.html">Helpdesk Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >&copy; 2026 A2Z Recyclers. All rights reserved. Managed under Gelos
+            Enterprise.</span
+          >
+        </div>
+      </footer>
+
+      <!-- ВЫЕЗЖАЮЩЕЕ МЕНЮ (MOBILE DRAWER) -->
+      <div class="drawer-backdrop" id="drawer-backdrop"></div>
+      <aside class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+          <span class="drawer-title-text">Menu</span>
+          <button
+            type="button"
+            class="drawer-close-btn"
+            id="drawer-close"
+            aria-label="Close menu"
+          >
+            <span class="mdi mdi-close" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav class="drawer-nav">
+          <ul>
+            <li><a href="./mission.html">Our mission</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./news.html">News</a></li>
+            <li><a href="./contact.html">Contacts</a></li>
+            <li><a href="./login.html" class="drawer-login-link">Login</a></li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- СКРИПТЫ ДЛЯ DRAWER -->
+    <script src="./js/script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const openBtn = document.getElementById('drawer-open')
+        const closeBtn = document.getElementById('drawer-close')
+        const drawer = document.getElementById('mobile-drawer')
+        const backdrop = document.getElementById('drawer-backdrop')
+
+        const toggleDrawer = isOpened => {
+          if (isOpened) {
+            drawer.classList.add('is-active')
+            backdrop.classList.add('is-active')
+            document.body.style.overflow = 'hidden'
+          } else {
+            drawer.classList.remove('is-active')
+            backdrop.classList.remove('is-active')
+            document.body.style.overflow = ''
+          }
+        }
+
+        if (openBtn && closeBtn && drawer && backdrop) {
+          openBtn.addEventListener('click', () => toggleDrawer(true))
+          closeBtn.addEventListener('click', () => toggleDrawer(false))
+          backdrop.addEventListener('click', () => toggleDrawer(false))
+        }
+      })
+    </script>
+  </body>
+</html>
