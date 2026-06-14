@@ -14,6 +14,6 @@
 
 ✅ блок анонса засунуть в сайдбар вместе с часами
 
-убрать переход на recovery.html из login
+✅ убрать переход на recovery.html из login
 
-убрать переход на news-item.html из news
+✅ убрать переход на news-item.html из news
