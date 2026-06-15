@@ -17,3 +17,5 @@
 ✅ убрать переход на recovery.html из login
 
 ✅ убрать переход на news-item.html из news
+
+https://excalidraw.com/#room=ed6a40154e5a43687d41,flLzoGZ7kOE1Wzl4rF1GQw
